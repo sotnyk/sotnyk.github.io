@@ -1,4 +1,4 @@
-	---
+---
 id: 4
 title: 'Книги и статьи'
 date: '2008-11-25T17:35:15+00:00'
@@ -9,12 +9,12 @@ guid: 'http://sotnyk.com/?page_id=4'
 
 **Книги**
 
-- - [А.И. Михалев, Е.А. Винокурова, С.Л. Сотник, Компьютерные методы интеллектуальной обработки данных.](Articles/cmidpbook_20140818.pdf)
+- [А.И. Михалев, Е.А. Винокурова, С.Л. Сотник, Компьютерные методы интеллектуальной обработки данных.](Articles/cmidpbook_20140818.pdf)
 
 Листинги программ данного издания размещены на сайте [cmidpbook.codeplex.com](https://cmidpbook.codeplex.com/), загрузка программ [архивом – здесь](https://cmidpbook.codeplex.com/SourceControl/latest#).  
 Также хочу выразить благодарность еще одному человеку, имя которого не указано, но его материалы и советы использовались при работе над изданием – профессору [Шумейко Александру Алексеевичу](https://ru.wikipedia.org/wiki/%D0%A8%D1%83%D0%BC%D0%B5%D0%B9%D0%BA%D0%BE,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87).
 
-- - [А.А.Шумейко, С.Л.Сотник, Интеллектуальный анализ данных (введение в Data Mining).](http://localhost/Articles/iad/Intellectualnyj_analiz_dannyh_120527.pdf) Текущая версия электронного издания – 27 мая 2012.
+- [А.А.Шумейко, С.Л.Сотник, Интеллектуальный анализ данных (введение в Data Mining).](Articles/iad/Intellectualnyj_analiz_dannyh_120527.pdf) Текущая версия электронного издания – 27 мая 2012.
 
 Коды, используемые в книге, можно загрузить [по ссылке https://www.sotnyk.ga/code/DataminingBookSrc.rar](code/DataminingBookSrc.rar).
 
@@ -28,7 +28,7 @@ guid: 'http://sotnyk.com/?page_id=4'
 - Лигун А.А., Шумейко А.А. Сотник С.Л. [Об одном методе решения обратной RPC-задачи.](Articles/Back_RPC.pdf) Тезисы к конференции “Математичне та програмне забезпечення iнтелектуальних систем MPZIS-2006”.
 - Сотник С.Л. [Пространственный кроссовер для задач оптимизации выбора узлов при помощи генетического алгоритма.](Articles/spatial_cross.pdf) Журнал “Математичне моделювання”. №1(16) 2007, стр. 11-14. 23 мая 2007 года по данной тематике было выступление на конференции “Проблемы компьютерного моделирования”.
 - [A. A. Shumeyko, S. L. Sotnik. Using Genetic Algorithms for Texts Classification Problems.](Articles/Using_Genetic_Algorithms_for_Texts_Classification_Problems.pdf) Опубликовано в Journal “Annals. Computer Science Series” – [http://anale-informatica.tibiscus.ro/?page=02\_rezumate&amp;link=v7f1](http://anale-informatica.tibiscus.ro/?page=02_rezumate&link=v7f1).
-- [С.Л. Сотник. Алгоритм краулинга S.C.E.N.T.](http://localhost/Articles/thesises_S.C.E.N.T.docx) Опубликовано в сборнике трудов II международной конференции «Проблемы и пути усовершенствования экономического механизма предпринимательской деятельности». Желтые Воды, 2010 год.
+- [С.Л. Сотник. Алгоритм краулинга S.C.E.N.T.](Articles/thesises_S.C.E.N.T.docx) Опубликовано в сборнике трудов II международной конференции «Проблемы и пути усовершенствования экономического механизма предпринимательской деятельности». Желтые Воды, 2010 год.
 - [Шумейко А. А., Сотник С. Л. Об использовании распределения служебных слов при проведении экспертизы письменной речи.](Articles/ob-ispolzovanii-raspredeleniya-sluzhebnyh-slov.pdf) Опубликовано в журнале “Інформаційна безпека”, №2 (2), 2009 – [http://www.nbuv.gov.ua/portal/natural/Ibez/2009\_2/](http://www.nbuv.gov.ua/portal/natural/Ibez/2009_2/).
 - [А.А. Шумейко, С.Л. Сотник. Итерационный метод построения векторного классификатора](Articles/A.A.Shumeyko,S.L.Sotnik.Iteratsionnyj_metod_postroeniya_vektornogo_klassifikatora.pdf). Опубликовано в журнале 1(20) 2009 “Методи математичного моделювання”. Стр. 7-11
 - [А.А. Шумейко, С.Л. Сотник, М.В. Лысак. Использование генетических алгоритмов в задачах классификации текстов](Articles/A.A.Shumeyko,S.L.Sotnik,M.V.Lysak.Ispolzovanie_GA_v_zadachah_klassifikatsii_tekstov.pdf). Опубликовано [в журнале 1(60) 2009 “Системные технологии”](http://www.nbuv.gov.ua/portal/natural/syte/2009_1/index.html). Стр. 125-138
