@@ -9,6 +9,7 @@ permalink: /2020/09/13/zamenit-li-ii-yuristov-pochemu-da-i-chego-realno-stoit-op
 ---
 
 ![horse_auto.jpg](https://sotnyk.github.io/wp-content/uploads/2020/09/horse_auto.jpg)
+
 <sub><sup>Извозчик и автомобиль. Взято из https://allerleiten.livejournal.com/818633.html</sup></sub>
 
 Сейчас я работаю в компании [P1K](https://p1k.org/), которая занимается разработкой помощника для юристов – [Loio](https://loio.com/). И мне постоянно приходится слышать запросы людей, не связанных с технической составляющей вопроса с намеком: “Ну подтверди, что нет, не заменит!”
