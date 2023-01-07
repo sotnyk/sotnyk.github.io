@@ -1,0 +1,87 @@
+<STYLE  TYPE="text/css">
+<!--
+BODY 	{ 
+	background: F2F2F2; 
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	} 
+P 	{ 
+	color: 333333;	
+	text-indent: 5%;
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	} 
+H1, H2, H3 { 
+	color: 808080; 
+	margin-top: 20px;
+	margin-left: 5%;
+	font-size: 130%
+	font-weight: bold;
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	}
+TD, TR { 
+	color: 333333;	
+	font-weight: normal;
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	}
+UL, OL { 
+	margin-left: 5%;
+	margin-right: 5%; 
+	}
+.contrast { 
+	color: black; 
+	background: silver 
+	}
+.section0 { 
+	color: 505050; 
+	margin-left: 5%;
+	margin-right: 5%; 
+	}
+.section1 { 
+	color: 505050; 
+	margin-left: 10%;
+	margin-right: 10%; 
+	}
+.section2 { 
+	color: 505050; 
+	margin-left: 10%;
+	margin-right: 20%; 
+	}
+.section3 { 
+	color: 505050; 
+	margin-left: 30%;
+	margin-right: 30%; 
+	}
+.credit { 
+	margin-top: 5px;
+	font-size: 90%;
+	text-indent: 0;
+	margin-left: 10%;
+	margin-right: 20%; 
+	}
+.descript { 
+	margin-top: 5px;
+	text-indent: 0;
+	color: silver;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 90%;
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	}
+A:link  { 
+	color: #A5503A; 
+	font-weight: bold;
+	}
+A:visited  { 
+	color: #CF9F7C; 
+	font-weight: bold;
+	}
+.topline {
+	color: silver; 
+	font-weight: medium;
+	margin-left: 10%; 
+	margin-right: 10%; 
+	font-size: 80%;  
+	font-family: Arial, Helvetica, Tahoma, helv, sans-serif 
+	}
+
+-->
+</STYLE>

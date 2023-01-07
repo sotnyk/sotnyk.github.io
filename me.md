@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?page_id=8'
 ---
 
 Сотник Сергей Леонидович. Родился 30 апреля 1974 года.  
-[![Сергей Леонидович Сотник](http://localhost/wp-content/uploads/2008/11/YellowRiver-295x300.jpg)](http://localhost/wp-content/uploads/2008/11/YellowRiver.jpg)
+[![Сергей Леонидович Сотник](wp-content/uploads/2008/11/YellowRiver-295x300.jpg)](wp-content/uploads/2008/11/YellowRiver.jpg)
 
 ## Образование
 
