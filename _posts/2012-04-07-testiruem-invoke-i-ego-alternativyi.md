@@ -8,17 +8,21 @@ guid: 'http://sotnyk.com/?p=1099'
 permalink: /2012/04/07/testiruem-invoke-i-ego-alternativyi/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2012/04/InvokeTest.jpg "Invoke Test")[Мы](http://www.iveonik.com), в своей работе активно используем широко известный движок для полнотекстового поиска [Lucene.net](http://incubator.apache.org/lucene.net/). Библиотека достойная. Но, как обычно, не все гладко. Недавно, например, с удивлением обнаружил в исходном коде использование Invoke. Причем, не где-то при инициализации, а при каждом вызове Snowball-[стеммера](http://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BC%D0%BC%D0%B8%D0%BD%D0%B3). Вот этот кусок из SnowballFilter.cs (я операторные скобки {} расставил в Java-стиле, чтобы код был компактнее):  
-\[csharp\]  
+![](https://sotnyk.github.io/wp-content/uploads/2012/04/InvokeTest.jpg "Invoke Test")
+
+[Мы](http://www.iveonik.com), в своей работе активно используем широко известный движок для полнотекстового поиска [Lucene.net](http://incubator.apache.org/lucene.net/). Библиотека достойная. Но, как обычно, не все гладко. Недавно, например, с удивлением обнаружил в исходном коде использование Invoke. Причем, не где-то при инициализации, а при каждом вызове Snowball-[стеммера](http://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BC%D0%BC%D0%B8%D0%BD%D0%B3). Вот этот кусок из SnowballFilter.cs (я операторные скобки {} расставил в Java-стиле, чтобы код был компактнее):  
+
+```csharp
 stemmer.SetCurrent(token.TermText());  
 try {  
- stemMethod.Invoke(stemmer, (System.Object\[\]) EMPTY\_ARGS);  
+ stemMethod.Invoke(stemmer, (System.Object\[]) EMPTY_ARGS);  
 } catch (System.Exception e) {  
  throw new System.SystemException(e.ToString());  
 }  
 Token newToken = new Token(stemmer.GetCurrent(),  
  token.StartOffset(), token.EndOffset(), token.Type());  
-\[/csharp\]  
+```
+
 Что мы здесь видим:
 
 1\. Методом SetCurrent, устанавливается строка, от которой нам нужно получить стем.  
@@ -39,81 +43,84 @@ Token newToken = new Token(stemmer.GetCurrent(),
 Тестировать я буду в своем обычном стиле. Т.е., без использования профилировщиков и т.п. Вместо этого, напишем небольшое консольное приложение, которое будет многократно повторять одну и ту же операцию, которую мы и хотим вычленить из общего окружения. Во время запуска выходим из Visual Studio, поскольку даже если она просто запущена, то может подтормаживать некоторые операции (наталкивался на такое). А уже при запуске из-под неё, результаты могут очень отличаться.
 
 Итак, прежде всего класс, который будем тестировать. Это простенькая имитация стеммера, который в нашем случае делает что-то простое со строкой:  
-\[csharp\]  
+
+```csharp
 public class Stemmer{  
  public string GetStem(string word) {  
  return word.ToUpperInvariant();  
  }  
 }  
-\[/csharp\]  
+```
+
 Мы будем вызывать его метод GetStem разными способами.
 
 Трассировку времени будем выполнять таким образом:  
-\[csharp\]  
+```csharp
 static void TraceTime(string title, Action action){  
  DateTime start = DateTime.Now;  
  action();  
  DateTime finish = DateTime.Now;  
- Console.WriteLine(“{0}. Processed at {1} msec”, title,  
+ Console.WriteLine("{0}. Processed at {1} msec", title,  
  (int)((finish-start).TotalMilliseconds));  
 }  
-\[/csharp\]  
+```
 Далее, в цикле 5 раз будем вызывать последовательность из разных типов вызовов. Почему 5 раз? Потому, что в многопоточном окружении Windows, любые эксперименты лучше повторять несколько раз. Кроме того, первый прогон всегда дает немного другие результаты – сказывается, что в нем происходит подгрузка и компиляция сборок, кеширование данных процессором и т.п. Поскольку сейчас мы тестируем не инициализацию, то первый прогон мы просто будем отбрасывать. Он будет просто “разогревочным”.
 
 **Метод 1: Прямой вызов.**  
 Ну, тут все просто:  
-\[csharp\]  
+```csharp
 const int loops = 1000000;  
 …  
 Stemmer directStemmer = new Stemmer();  
-TraceTime(“Direct calling”, () =&gt;  
+TraceTime("Direct calling", () =>  
 {  
  for (int i = 0; i &lt; loops; ++i) {  
- string stem = directStemmer.GetStem(“woRd”);  
+ string stem = directStemmer.GetStem("woRd");  
  };  
 });  
-\[/csharp\]
+```
 
 **Метод 2: Используем предварительно подготовленный делегат**, честно доставая его через рефлекшен:  
-\[csharp\]  
+```csharp
 public delegate String StemDelegate(string word);  
 …  
 object stemmerObj = new Stemmer();  
 StemDelegate stemmer = (StemDelegate)Delegate  
  .CreateDelegate(typeof(StemDelegate),  
- stemmerObj, “GetStem”);  
-TraceTime(“Using delegate”, () =&gt;  
+ stemmerObj, "GetStem");  
+TraceTime(“Using delegate”, () =>
 {  
  for (int i = 0; i &lt; loops; ++i) {  
- string stem = stemmer(“woRd”);  
+ string stem = stemmer("woRd");  
  };  
 });  
-\[/csharp\]
+```
 
 **Метод 3: Постоянный Invoke** – это тот метод, который вызвал у меня некоторое недоумение. Чтобы приблизить его к оригиналу, где результат достается не через рефлекшен, я закомментировал приведение результата к типу string:  
-\[csharp\]  
+```csharp
 object reflectionStemmer = new Stemmer();  
-MethodInfo mi = typeof(Stemmer).GetMethod(“GetStem”);  
-object\[\] arguments = new object\[\]{“woRd”};  
-TraceTime(“Using Invoke”, () =&gt;  
+MethodInfo mi = typeof(Stemmer).GetMethod("GetStem");  
+object[] arguments = new object[]{"woRd"};  
+TraceTime(“Using Invoke”, () =>  
 {  
- for (int i = 0; i &lt; loops; ++i) {  
- /\*string stem = (string)\*/  
+ for (int i = 0; i < loops; ++i) {  
+ /*string stem = (string)*/  
  mi.Invoke(reflectionStemmer, arguments);  
  };  
 });  
-\[/csharp\]
+```
 
 **Метод 4: Использование dynamic:**  
-\[csharp\]  
+```csharp
 dynamic dynamicStemmer = new Stemmer();  
-TraceTime(“Dynamic calling”, () =&gt;  
+TraceTime("Dynamic calling", () =>
 {  
- for (int i = 0; i &lt; loops; ++i) {  
- string stem = dynamicStemmer.GetStem(“woRd”);  
+ for (int i = 0; i < loops; ++i) {  
+ string stem = dynamicStemmer.GetStem("woRd");  
  };  
 });  
-\[/csharp\]  
+```
+
 Результаты прогонки на моем домашнем компьютере. Win7x64, AnyCPU, Release. Кстати, еще момент – недавно столкнулся с тем, что некоторые вычисления в режиме x86 выполняются ощутимо быстрее, а другие медленнее. Так что для полноты картины нужно запускать в обоих режимах (x86, x64), но в нашем случае отличия несущественные – я проверил, так что приводить результаты не буду.
 
 ```
