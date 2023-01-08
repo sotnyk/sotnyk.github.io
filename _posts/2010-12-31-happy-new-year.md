@@ -10,7 +10,7 @@ permalink: /2010/12/31/happy-new-year/
 
 Всех поздравляю с Новым Годом железного кролика и Рождеством! Всего-всего-всего!!! По случаю этих праздников позволю себе жуткий копипаст…
 
-<object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/dcLMH8pwusw?version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" height="390" src="http://www.youtube.com/v/dcLMH8pwusw?version=3" type="application/x-shockwave-flash" width="640"></embed></object>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3Uo0JAUWijM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Думаю, эту песню слышали все. А как будут эти слова звучать по-русски?  
   
