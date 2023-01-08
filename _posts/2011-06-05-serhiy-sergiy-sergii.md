@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=730'
 permalink: /2011/06/05/serhiy-sergiy-sergii/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2011/06/SerhiySergiySergii.png "Serhiy Sergiy Sergii") Утомили меня наши органы, выдающие документы. Слова, вынесенные в заголовок – это все варианты моего имени. Итак, имеем уже 3 варианта транслитерации украинского варианта моего имени (Сергiй):
+![](https://sotnyk.github.io/wp-content/uploads/2011/06/SerhiySergiySergii.png "Serhiy Sergiy Sergii") 
+
+Утомили меня наши органы, выдающие документы. Слова, вынесенные в заголовок – это все варианты моего имени. Итак, имеем уже 3 варианта транслитерации украинского варианта моего имени (Сергiй):
 
 - Serhiy – первый загранпаспорт
 - Sergiy – водительские права

@@ -38,8 +38,8 @@ permalink: /2011/06/18/kiev-stolitsa-moey-rodinyi/
 
 И, напоследок, небольшая видеозарисовка:
 
-<iframe allowfullscreen="" frameborder="0" height="390" loading="lazy" src="http://www.youtube.com/embed/Q3dgixSJR20?rel=0" width="480"></iframe>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q3dgixSJR20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 Хип-хоп на Майдане.
 
-<iframe allowfullscreen="" frameborder="0" height="390" loading="lazy" src="http://www.youtube.com/embed/jqVWUDyd59Q?rel=0" width="480"></iframe>  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jqVWUDyd59Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 Живая скульптура. Оживает, если кинуть денежку…

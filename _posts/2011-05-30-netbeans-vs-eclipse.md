@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=709'
 permalink: /2011/05/30/netbeans-vs-eclipse/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2011/05/NBvsEclipse-300x184.png "NetBeans vs. Eclipse")Как я [обещал ранее](https://sotnyk.github.io/2011/05/28/i-snova-android/), бегло сравнил два бесплатных варианта среды разработки под Android.
+![](https://sotnyk.github.io/wp-content/uploads/2011/05/NBvsEclipse-300x184.png "NetBeans vs. Eclipse")
+
+Как я [обещал ранее](https://sotnyk.github.io/2011/05/28/i-snova-android/), бегло сравнил два бесплатных варианта среды разработки под Android.
 
 1\. Более привычная для меня среда NetBeans 7.0 с плагином [nbandroid](http://plugins.netbeans.org/plugin/19545/nbandroid).  
 2\. Непривычное мне по терминологии и тому, что где находится, «затмение». Оно же Eclipse 3.6. Основной плюс этой среды в том, что [плагин для разработчика](http://developer.android.com/sdk/eclipse-adt.html) Андроид-приложений написан самой Google.
