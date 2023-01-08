@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=1583'
 permalink: /2016/02/13/gde-nahodyatsya-lichnost-i-soznanie/
 ---
 
-[![face](https://sotnyk.github.io/wp-content/uploads/2016/02/face-300x200.jpg)](https://sotnyk.github.io/wp-content/uploads/2016/02/face.jpg)В ответ на свой предыдущий пост [обнаружил комментарий](https://sotnyk.github.io/2016/02/02/chelovechestvo-posledniy-rubezh/#comment-4121), который, пожалуй, заслуживает отдельного поста.
+[![face](https://sotnyk.github.io/wp-content/uploads/2016/02/face-300x200.jpg)](https://sotnyk.github.io/wp-content/uploads/2016/02/face.jpg)
+
+В ответ на свой предыдущий пост [обнаружил комментарий](https://sotnyk.github.io/2016/02/02/chelovechestvo-posledniy-rubezh/#comment-4121), который, пожалуй, заслуживает отдельного поста.
 
 > Maks says:  
 > А вам не кажется, что личность невозможно переместить из тела, просто потому что клетки (мозга, например) и личность это суть одно и то же. Скопировать – возможно, но в этом нет особого смысла.

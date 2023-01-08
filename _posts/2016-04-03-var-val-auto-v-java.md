@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=1609'
 permalink: /2016/04/03/var-val-auto-v-java/
 ---
 
-[![java-var](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var-300x240.jpg)](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var.jpg)Сейчас происходит активное обсуждение возможности введения в новую версию Java автоматического вывода типов, как это сделано в таких языках, как C# или C++. Вот в этих статьях можете почитать “pro et contra” относительно этого предложения:
+[![java-var](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var-300x240.jpg)](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var.jpg)
+
+Сейчас происходит активное обсуждение возможности введения в новую версию Java автоматического вывода типов, как это сделано в таких языках, как C# или C++. Вот в этих статьях можете почитать “pro et contra” относительно этого предложения:
 
 - [Var и val в Java?](https://habrahabr.ru/post/280188/)
 - [Ключевое слово «var» в Java: пожалуйста, только не это](https://habrahabr.ru/post/280075/)
@@ -16,11 +18,17 @@ permalink: /2016/04/03/var-val-auto-v-java/
 У меня по этому поводу мнение такое. Код пишется один раз, читается много (банальная истина). Автоматический вывод типа во многих случаях заставляет делать дополнительные действия для того, чтобы понять, какого типа переменная. А значит, это плохо. Да, это привычно, например, для JavaScript-программистов, но там совершенно другая парадигма типизации.
 
 Раздражение от явного и полного прописывания типов вызывают такие вот куски кода:  
-`<br></br>List<Pair<String, Double>> scores = seeker.getScores(documentAsCentroid);<br></br>...<br></br>for (Pair<String, Double> score: scores)<br></br>`
+```
+List<Pair<String, Double>> scores = seeker.getScores(documentAsCentroid);
+...
+for (Pair<String, Double> score: scores)
+```
 
 И это (Pair&lt;String, Double&gt;) далеко не самый длинное определение типа, которое приходится повторять. А любые повторы – это действительно плохо (помимо того, что просто неуклюже). Но есть способ значительно лучше и выразительнее. Вот чего мне после Паскаля не хватало в Java, а затем в C#, так это конструкции типа Type (typedef в C). В C# под это дело пытался приспособить using, который позволяет в начале файла написать что-то типа:
 
-`using StopWordsTables = System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>;`
+```
+using StopWordsTables = System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>>;
+```
 
 Эта конструкция позволяла вместо той громоздкой писанины, что стоит справа, использовать идентификатор StopWordsTables. К сожалению, он действителен только в пределах одного исходного файла…
 
