@@ -12,7 +12,7 @@ permalink: /2020/01/07/podozhdat-luchshaya-strategiya/
 
 В самом начале следующего года, нам обещают повышение производительности токенайзеров до 80 раз, легкость в генерации текста:
 
-[![huggingface transformers library fast tokenizer and sequence generation](https://sotnyk.github.io/wp-content/uploads/2029/02/tokenizers.jpg)](https://www.linkedin.com/posts/thomas-wolf-a056857_nlp-deeplearning-opensource-activity-6616384232442986497-gc9l)
+[![huggingface transformers library fast tokenizer and sequence generation](https://sotnyk.github.io/wp-content/uploads/2019/02/tokenizers.jpg)](https://www.linkedin.com/posts/thomas-wolf-a056857_nlp-deeplearning-opensource-activity-6616384232442986497-gc9l)
 
 Также, трансформеры типа BERT хорошо известны своей прожорливостью в плане ресурсов. Одним из решений данной проблемы может стать [архитектура “Reformer” от Гугла](https://openreview.net/forum?id=rkgNKkHtvB). И то, что [Hugging Face заинтересовались этим](https://www.linkedin.com/posts/thomas-wolf-a056857_nlp-deeplearning-ai-activity-6619363933658714112-MQ0K), расслабляет ))) А может ничего не делать, и все будет сделано за нас?
 
