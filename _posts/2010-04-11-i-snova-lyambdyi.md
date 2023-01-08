@@ -21,59 +21,89 @@ Erty Hackward в своем [комментарии](https://sotnyk.github.io/?p
 
 Но обратил внимание на свою ошибку в коде – коллекция инициализируется всегда, даже, если мы тестируем лямбды. А это уже неправильно. Поэтому исправил ошибку и чуть изменил код, как предложил Erty – теперь коллекцию конструирую не передавая ей размера. Таким образом, тестируем самый распространенный случай работы с коллекциями.
 
-\[csharp\]  
-class Program  
-{  
- static void Main(string\[\] args)  
- {  
- int testNum = ParseTest(args);  
- if (testNum src = new List<int>();</int>
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        int testNum = ParseTest(args);
+        if (testNum < = 0)
+        {
+            ShowUsage();
+            return;
+        }
 
- Random rnd = new Random();  
- const int ElementsNumber = 10000000;
+        List<int> src = new List<int>();
+        Random rnd = new Random();
+        const int ElementsNumber = 10000000;
+        for (int i = 0; i < ElementsNumber; ++i)
+        {
+            src.Add(rnd.Next(int.MinValue, int.MaxValue));
+        }
 
- for (int i = 0; i res;  
- string testName = “{none}”;  
- switch (testNum)  
- {  
- case 1:  
- res = src.FindAll(x =&gt; x &gt; 0);  
- testName = “Lambda”;  
- break;  
- case 2:  
- res = new List<int>();  
- for (int i = 0; i 0)  
- res.Add(src\[i\]);  
- testName = @”Cycle “”for”””;  
- break;  
- case 3:  
- res = new List</int><int>();  
- foreach (int i in src)  
- if (i &gt; 0)  
- res.Add(i);  
- testName = @”Cycle “”foreach”””;  
- break;  
- case 4:  
- res = new List</int><int>();  
- for (int i = ElementsNumber – 1, j = 0; i &gt;= 0; )  
- {  
- if (0 4)  
- return 0;  
- return res;  
- }</int>
+        DateTime start = DateTime.Now;
+        List<int> res;
+        string testName = "{none}";
+        switch (testNum)
+        {
+            case 1:
+                res = src.FindAll(x => x > 0);
+                testName = "Lambda";
+                break;
+            case 2:
+				res = new List<int>();
+                for (int i = 0; i < ElementsNumber; ++i)
+                    if (src[i] > 0)
+                        res.Add(src[i]);
+                testName = @"Cycle ""for""";
+                break;
+            case 3:
+				res = new List<int>();
+				foreach (int i in src)
+                    if (i > 0)
+                        res.Add(i);
+                testName = @"Cycle ""foreach""";
+                break;
+            case 4:
+				res = new List<int>();
+				for (int i = ElementsNumber - 1, j = 0; i >= 0; )
+                {
+                    if (0 < (j = src[i--]))
+                        res.Add(j);
+                }
+                testName = @"Cycle ""optimized for""";
+                break;
+        }
+        DateTime finish = DateTime.Now;
 
- private static void ShowUsage()  
- {  
- Console.WriteLine(“Usage: “);  
- Console.WriteLine(“LambdaTest.exe {test number}”);  
- Console.WriteLine(” {test number} = 1: Lambda test.”);  
- Console.WriteLine(” {test number} = 2: Simple cycle test.”);  
- Console.WriteLine(” {test number} = 3: For-each cycle test.”);  
- Console.WriteLine(” {test number} = 4: Optimized cycle test.”);  
- Console.ReadLine();  
- }  
-}  
-\[/csharp\]
+        Console.WriteLine("{0} search ended at {1} msec.", 
+			testName, (finish-start).TotalMilliseconds);
+        Console.ReadLine();
+    }
+
+    private static int ParseTest(string[] args)
+    {
+        if (args.Length != 1)
+            return 0;
+        int res;
+        if (!int.TryParse(args[0], out res))
+            return 0;
+        if (res < 1 || res > 4)
+            return 0;
+        return res;
+    }
+    private static void ShowUsage()
+    {
+        Console.WriteLine("Usage: ");
+        Console.WriteLine("LambdaTest.exe {test number}");
+        Console.WriteLine("  {test number} = 1: Lambda test.");
+        Console.WriteLine("  {test number} = 2: Simple cycle test.");
+        Console.WriteLine("  {test number} = 3: For-each cycle test.");
+        Console.WriteLine("  {test number} = 4: Optimized cycle test.");
+        Console.ReadLine();
+    }
+}
+```
 
 Вот средние результаты (они с другой машины, поэтому абсолютные значения отличаются, но нам важно отношение):
 

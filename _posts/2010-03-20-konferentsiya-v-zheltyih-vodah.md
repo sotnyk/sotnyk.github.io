@@ -34,13 +34,13 @@ permalink: /2010/03/20/konferentsiya-v-zheltyih-vodah/
 
 ![Цыгане](https://sotnyk.github.io/pics/YellowRiver2010/gipsy.jpg "Цыгане")
 
-<sub><sup>"Цыгане"</sub></sup>
+<sub><sup> "Цыгане" </sup></sub>
 
 В самый разгар праздника, из «центра» вернулся наш цыганский барон – Александр Алексеевич. Немедленно был облачен в соответствующие одеяния.
 
 ![Наш барон](https://sotnyk.github.io/pics/YellowRiver2010/Baron.jpg "Наш барон")
 
-<sub><sup>Наш "барон"</sub></sup>
+<sub><sup> Наш "барон" </sup></sub>
 
 Спасибо организаторам! Ждите нас в следующем году!
 
