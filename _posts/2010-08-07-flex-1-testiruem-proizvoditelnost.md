@@ -22,106 +22,127 @@ permalink: /2010/08/07/flex-1-testiruem-proizvoditelnost/
 
 Эталонная реализация на C# (я опущу незначащие секции импорта и названия класса). Консольное приложение:
 
-\[csharp\]  
-static void Main(string\[\] args)  
-{  
- string text = File.ReadAllText(  
- Path.Combine(Path.GetDirectoryName(new Uri(  
- Assembly.GetEntryAssembly().CodeBase).LocalPath),  
- @”en.txt”)  
- );
-
- DateTime start = DateTime.Now;  
- uint hash = 0;  
- for (int i=0; i&lt;100; ++i)  
- hash = HashBKDR(text);  
- DateTime finish = DateTime.Now;
-
- Console.WriteLine(“Hash = ” + hash + “; Time = ” +  
- (finish – start).TotalMilliseconds + ” msec.”);  
-}  
-\[/csharp\]
+```csharp
+static void Main(string[] args)
+{
+    string text = File.ReadAllText(
+        Path.Combine(Path.GetDirectoryName(new Uri(
+            Assembly.GetEntryAssembly().CodeBase).LocalPath),
+            @"en.txt")
+        );
+    DateTime start = DateTime.Now;
+    uint hash = 0;
+    for (int i=0; i&lt;100; ++i)
+        hash = HashBKDR(text);
+    DateTime finish = DateTime.Now;
+    Console.WriteLine("Hash = " + hash + "; Time = " +
+        (finish - start).TotalMilliseconds + " msec.");
+}
+```
 
 Думаю, что здесь особых пояснений не требуется, кроме того, что сам тест выполняется 100 раз. Время исполнения тестируемого кода на исследуемом тексте составило слишком малую величину, чтобы полагаться на системное время. Выходом было либо увеличить количество итераций, либо использовать более точный таймер. Чтобы не усложнять код, пошел по первому пути. Тест исполнялся 100 раз. Вот собственно сама хэш-функция:
 
-\[csharp\]  
-private static uint HashBKDR(string str)  
-{  
- //{Note: this hash function is described in “The C Programming Language”  
- // by Brian Kernighan and Donald Ritchie, Prentice Hall}  
- uint bitsInLongint = sizeof(uint) \* 8;  
- uint result = 0;  
- for (int i = 0; i   
+```csharp
+private static uint HashBKDR(string str)
+{
+    //{Note: this hash function is described in "The C Programming Language"
+    //       by Brian Kernighan and Donald Ritchie, Prentice Hall}
+    uint bitsInLongint = sizeof(uint) * 8;
+    uint result = 0;
+    for (int i = 0; i < str.Length; i++)
+    {
+        result = (result * (bitsInLongint - 1)) + str[i];
+    }
+    return result;
+} 
+```
+
+Думаю, что здесь особых пояснений не требуется, кроме того, что сам тест выполняется 100 раз. Время исполнения тестируемого кода на исследуемом тексте составило слишком малую величину, чтобы полагаться на системное время. Выходом было либо увеличить количество итераций, либо использовать более точный таймер. Чтобы не усложнять код, пошел по первому пути. Тест исполнялся 100 раз. Вот собственно сама хэш-функция:
+
+
 Теперь попробуем повторить аналогичные действия на AS3. Только сделаем для интереса сразу два варианта – один с использованием строгой типизации, а второй – без.  
-\[as3\]  
-import flash.display.Sprite;  
-import flash.events.Event;  
-import flash.display.Loader;  
-import flash.net.URLLoader;  
-import flash.net.URLRequest;  
-import flash.text.TextField;  
+
+```as3
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.display.Loader;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
+import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
+public class Main extends Sprite
+{
+	private var txt_loader:URLLoader = new URLLoader();
+	private var source:String;
+	var my_txt:TextField = new TextField();
+	public function Main():void
+	{
+		trace("Start text loading");
+		txt_loader.addEventListener(Event.COMPLETE, onTxtComplete);
+		txt_loader.load(new URLRequest("en.txt"));
+	}
+	private function onTxtComplete(e:Event = null):void
+	{
+		trace("Text loading complete");
+		txt_loader.removeEventListener(Event.COMPLETE, init);
+		source = e.target.data;
+		trace("text length = " + source.length + " chars.");
+		// Test typed variant
+		var start1:Date = new Date();
+		var hash:uint = HashBKDR(source);
+		var finish1:Date = new Date();
+		trace("HashCode = " + hash);
+		trace("Time to calc typed = "
+			+ (finish1.time - start1.time) + " msec");
+		// Test non-typed variant
+		var start2:Date = new Date();
+		var hash2:uint = HashBKDR_nontyped(source);
+		var finish2:Date = new Date();
+		trace("HashCode = " + hash2);
+		trace("Time to calc non-typed = "
+			+ (finish2.time - start2.time) + " msec");
+		my_txt.text = "Time to calc typed = " +
+			(finish1.time - start1.time) + " msec";
+		my_txt.appendText("rnTime to calc non_typed = " +
+			(finish2.time - start2.time) + " msec");
+		addChild(my_txt);
+		my_txt.width=500;
+		my_txt.x=(stage.stageWidth-my_txt.width)/2;
+		my_txt.y=20;
+		my_txt.border = true;
+		my_txt.autoSize=TextFieldAutoSize.LEFT;
+		my_txt.wordWrap=true;
+	}
+	private static function HashBKDR(str:String):uint
+	{
+		var bitsInLongint:uint = 4/*sizeof(uint)*/ * 8;
+		var result:uint = 0;
+		var len:int = str.length;
+		for (var i:int = 0; i < len; i++) {
+			result = (result * (bitsInLongint - 1)) + str.charCodeAt(i);
+		}
+		return result;
+	}
 
-public class Main extends Sprite  
-{  
- private var txt\_loader:URLLoader = new URLLoader();  
- private var source:String;  
- var my\_txt:TextField = new TextField();
-
- public function Main():void  
- {  
- trace(“Start text loading”);
-
- txt\_loader.addEventListener(Event.COMPLETE, onTxtComplete);  
- txt\_loader.load(new URLRequest(“en.txt”));  
- }
-
- private function onTxtComplete(e:Event = null):void  
- {  
- trace(“Text loading complete”);  
- txt\_loader.removeEventListener(Event.COMPLETE, init);  
- source = e.target.data;  
- trace(“text length = ” + source.length + ” chars.”);
-
- // Test typed variant  
- var start1:Date = new Date();  
- var hash:uint = HashBKDR(source);  
- var finish1:Date = new Date();  
- trace(“HashCode = ” + hash);  
- trace(“Time to calc typed = ”  
-\+ (finish1.time – start1.time) + ” msec”);
-
- // Test non-typed variant  
- var start2:Date = new Date();  
- var hash2:uint = HashBKDR\_nontyped(source);  
- var finish2:Date = new Date();  
- trace(“HashCode = ” + hash2);  
- trace(“Time to calc non-typed = ”  
-\+ (finish2.time – start2.time) + ” msec”);
-
- my\_txt.text = “Time to calc typed = ” +  
- (finish1.time – start1.time) + ” msec”;  
- my\_txt.appendText(“rnTime to calc non\_typed = ” +  
- (finish2.time – start2.time) + ” msec”);  
- addChild(my\_txt);
-
- my\_txt.width=500;  
- my\_txt.x=(stage.stageWidth-my\_txt.width)/2;  
- my\_txt.y=20;  
- my\_txt.border = true;  
- my\_txt.autoSize=TextFieldAutoSize.LEFT;  
- my\_txt.wordWrap=true;  
- }
-
- private static function HashBKDR(str:String):uint  
- {  
- var bitsInLongint:uint = 4/\*sizeof(uint)\*/ \* 8;  
- var result:uint = 0;  
- var len:int = str.length;  
- for (var i:int = 0; i   
+	private static function HashBKDR_nontyped(str:String):uint
+	{
+		var bitsInLongint = 4/*sizeof(uint)*/ * 8;
+		var result = 0;
+		var len = str.length;
+		for (var i = 0; i < len; i++) {
+			result = (result * (bitsInLongint - 1)) + str.charCodeAt(i);
+		}
+		return result;
+	}
+}
+```
 Теперь собственно тестирование. Время работы приложений я усреднил после 5 запусков, а C# еще и поделил на 100 (количество выполняемых циклов). Запуск выполнялся при закрытых средах приложений, с настройками компиляции «Release». Запуск выполнялся на одном и том же ноутбуке, процессор AMD Turion64x2.
 
-`AS3 typed     – 2221 msec.<br></br>AS3 non_typed – 5067 msec.<br></br>C#            – 28 msec.<br></br>`
+```
+AS3 typed     – 2221 msec.
+AS3 non_typed – 5067 msec.
+C#            – 28 msec.
+```
 
 **Выводы.**
 
