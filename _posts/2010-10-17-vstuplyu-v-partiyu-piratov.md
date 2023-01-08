@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=359'
 permalink: /2010/10/17/vstuplyu-v-partiyu-piratov/
 ---
 
-[![](https://sotnyk.github.io/wp-content/uploads/2010/10/pirat.png)](https://sotnyk.github.io/wp-content/uploads/2010/10/pirat.png)Последнее время меня просто преследуют новости вроде этой: [Microsoft запатентовала возможность кодирования видео с помощью видеокарты](http://itc.ua/news/microsoft_zapatentovala_vozmozhnost_kodirovaniya_video_s_pomoshhyu_videokarty_49223). Это только один из поразивших меня патентов. Вот еще несколько:
+[![](https://sotnyk.github.io/wp-content/uploads/2010/10/pirat.png)](https://sotnyk.github.io/wp-content/uploads/2010/10/pirat.png)
+
+Последнее время меня просто преследуют новости вроде этой: [Microsoft запатентовала возможность кодирования видео с помощью видеокарты](http://itc.ua/news/microsoft_zapatentovala_vozmozhnost_kodirovaniya_video_s_pomoshhyu_videokarty_49223). Это только один из поразивших меня патентов. Вот еще несколько:
 
 - [Microsoft запатентовала изменяемую сенсорную клавиатуру.](http://itc.ua/news/microsoft_zapatentovala_izmenyaemuyu_sensornuyu_klaviaturu_49282)
 - [Apple получила патент на pinch-to-zoom.](http://itc.ua/news/apple_poluchila_patent_na_pinch-to-zoom_49266)
