@@ -10,4 +10,4 @@ permalink: /2010/10/30/nikomu-ne-izbezhat-sluzhby-v-armii/
 
 MS Word 2007. Корректор грамматики.
 
-![](http://localhost/wp-content/uploads/2010/10/Word2007_army.png "Word 2007, корректор грамматики")
+![](https://sotnyk.github.io/wp-content/uploads/2010/10/Word2007_army.png "Word 2007, корректор грамматики")

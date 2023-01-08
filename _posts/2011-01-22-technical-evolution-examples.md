@@ -19,12 +19,12 @@ permalink: /2011/01/22/technical-evolution-examples/
 **Эволюция автомобильчиков 1**  
 <http://megaswf.com/serve/102223/> – Можем поиграться коэффициентом мутации. Иногда встречаются достаточно красивые модели. Немножко непонятны детали правил, но все-равно, завораживает.
 
-![](http://localhost/wp-content/uploads/2011/01/Vehicle1-300x176.png "Vehicle1")
+![](https://sotnyk.github.io/wp-content/uploads/2011/01/Vehicle1-300x176.png "Vehicle1")
 
 **Эволюция автомобильчиков 2**  
 <http://www.qubit.devisland.net/ga/index.html> – Визуально пример немного проще предыдущего, но зато все правила четко описаны. Более того, есть исходники на ActionScript. Интересно, знают ли об этих исходниках в АвтоВАЗе и ЗАЗе? 😉
 
-![](http://localhost/wp-content/uploads/2011/01/Vehicle2-300x241.png "Vehicle2")
+![](https://sotnyk.github.io/wp-content/uploads/2011/01/Vehicle2-300x241.png "Vehicle2")
 
 **Очень понравившийся мне пример сборки часов**  
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="100" style="height: 390px; width: 640px;" width="100"><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><param name="src" value="http://www.youtube.com/v/dN_6B1auRV4?version=3"></param><param name="allowfullscreen" value="true"></param><embed allowfullscreen="true" allowscriptaccess="always" height="100" src="http://www.youtube.com/v/dN_6B1auRV4?version=3" style="height: 390px; width: 640px;" type="application/x-shockwave-flash" width="100"></embed></object>  
@@ -35,6 +35,6 @@ permalink: /2011/01/22/technical-evolution-examples/
 **Наконец, пример очень даже прикладной. Более того – уже работающий.**  
 Оказывается, антенны, которые использует NASA (например, на орбитальной станции проекта Odyssey – которая обеспечивает ретрансляция трафика между марсоходами Spirit/Opportunity и центром управления на Земле), разрабатываются в том числе и при помощи генетического программирования.
 
-![](http://localhost/wp-content/uploads/2011/01/antenna1.jpg "antenna1")![](http://localhost/wp-content/uploads/2011/01/antenna2.jpg "antenna2")
+![](https://sotnyk.github.io/wp-content/uploads/2011/01/antenna1.jpg "antenna1")![](https://sotnyk.github.io/wp-content/uploads/2011/01/antenna2.jpg "antenna2")
 
 Некоторые подробности здесь: <http://ti.arc.nasa.gov/projects/esg/research/antenna.htm>

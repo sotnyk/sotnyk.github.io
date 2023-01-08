@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=1632'
 permalink: /2016/06/20/literaturnaya-nedelya/
 ---
 
-[![2a](http://localhost/wp-content/uploads/2016/06/2a-257x300.png)](http://localhost/wp-content/uploads/2016/06/2a.png)На прошлой неделе опубликовал 2 статьи на Хабре и на Geektimes.
+[![2a](https://sotnyk.github.io/wp-content/uploads/2016/06/2a-257x300.png)](https://sotnyk.github.io/wp-content/uploads/2016/06/2a.png)На прошлой неделе опубликовал 2 статьи на Хабре и на Geektimes.
 
 **[C# — есть ли что-то лишнее?](https://habrahabr.ru/post/302076/)**
 

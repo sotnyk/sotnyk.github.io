@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=332'
 permalink: /2010/10/11/zarabotok-v-internete-300-500-v-den/
 ---
 
-[![](http://localhost/wp-content/uploads/2010/10/roulette_wheel.jpg "Колесо рулетки")](http://localhost/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_wheel/)  
+[![](https://sotnyk.github.io/wp-content/uploads/2010/10/roulette_wheel.jpg "Колесо рулетки")](https://sotnyk.github.io/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_wheel/)  
 В интернете полно историй о том, как можно заработать в интернет-казино. Вынесенное в заголовок стянуто мною со следующей страницы: <http://vzarabotke.ru/>. Подозреваю, что скоро сайт может измениться (вот и автор называется то Евгений Гольдман, то Григорий Перельман), поэтому здесь вкратце опишу предлагаемую методику, а затем её проверку.  
   
 Итак, собственно алгоритм (приведу с сокращениями):
@@ -29,11 +29,11 @@ permalink: /2010/10/11/zarabotok-v-internete-300-500-v-den/
 
 После запуска мы можем задать правила казино. Сразу после запуска заданы правила, действующие в платном режиме европейской рулетки на сайте <http://bigazart.com> – минимальная ставка на чет-нечет / красное-черное (это эквивалентные варианты, доказывать здесь это я не буду) равна 1. Максимальная – 250. Первоначальная ставку выбираем равной минимальной, после неудачи удваиваем.
 
-[![](http://localhost/wp-content/uploads/2010/10/roulette_start-300x143.png "Начальное состояние")](http://localhost/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_start/)
+[![](https://sotnyk.github.io/wp-content/uploads/2010/10/roulette_start-300x143.png "Начальное состояние")](https://sotnyk.github.io/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_start/)
 
 Для того, чтобы начать, нажимаем старт. Частота ставок сделана такой, чтобы было быстро, но глаз еще замечал динамику. Сколько я ни нажимал старт, в конце концов получал следующую картину (простите за английский интерфейс – такая уж привычка, “loss” – проиграл):
 
-[![](http://localhost/wp-content/uploads/2010/10/roulette_finish-300x152.png "Обычное состояние через некоторое время")](http://localhost/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_finish/)
+[![](https://sotnyk.github.io/wp-content/uploads/2010/10/roulette_finish-300x152.png "Обычное состояние через некоторое время")](https://sotnyk.github.io/2010/10/11/zarabotok-v-internete-300-500-v-den/roulette_finish/)
 
 В данном случае, “игрок” еще долго продержался. Целых 462 вращения рулетки. Обычно все заканчивается быстрее. Если хочется, можно настроить другие параметры игры и нажать Reset, после чего повторить моделирование. Для того, чтобы посмотреть весь ход в текстовом виде, можно нажать кнопку “Copy to clipboard”, после чего посмотреть результат в любом текстовом редакторе.
 
@@ -49,6 +49,6 @@ permalink: /2010/10/11/zarabotok-v-internete-300-500-v-den/
 
 **Update 12.10.2010**: После личной переписки с Димой Прасковьиным, решил также добавить график усредненного (по 100000 запускам) количества денег при условии, что можно залезть в долг (в минуса).
 
-[![](http://localhost/wp-content/uploads/2010/10/ManyRuns-300x210.png "Нажмите, чтобы посмотреть крупно.")](http://localhost/2010/10/11/zarabotok-v-internete-300-500-v-den/manyruns/)
+[![](https://sotnyk.github.io/wp-content/uploads/2010/10/ManyRuns-300x210.png "Нажмите, чтобы посмотреть крупно.")](https://sotnyk.github.io/2010/10/11/zarabotok-v-internete-300-500-v-den/manyruns/)
 
 По иксам – вращения рулетки, по игрекам – деньги. Исходники уже не буду выкладывать.

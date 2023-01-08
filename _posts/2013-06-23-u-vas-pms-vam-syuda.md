@@ -10,6 +10,6 @@ permalink: /2013/06/23/u-vas-pms-vam-syuda/
 
 Гуляя по улицам своего города, на месте первой поликлиники обнаружил такое:
 
-[![Центр ПМС](http://localhost/wp-content/uploads/2013/06/Centr-PMS.jpg)](http://localhost/wp-content/uploads/2013/06/Centr-PMS.jpg)
+[![Центр ПМС](https://sotnyk.github.io/wp-content/uploads/2013/06/Centr-PMS.jpg)](https://sotnyk.github.io/wp-content/uploads/2013/06/Centr-PMS.jpg)
 
 В общем, девушки, женщины, теперь вам есть куда обратиться :). Не выносите своим парням/мужчинам мозги!

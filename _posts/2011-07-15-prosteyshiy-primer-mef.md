@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=799'
 permalink: /2011/07/15/prosteyshiy-primer-mef/
 ---
 
-![](http://localhost/wp-content/uploads/2011/07/MEFLogo.png "MEF logo")До недавнего времени в том случае, если нужно было работать с кодом, неизвестным основному приложению на этапе компиляции (плагины), я по старинке использовал механизм, известный как Reflection. Несколько громоздкий, но своей цели он достигает. Но в 4-м .NET Framework появился встроенный механизм, известный как [MEF (Managed Extensions Framework)](http://mef.codeplex.com/).
+![](https://sotnyk.github.io/wp-content/uploads/2011/07/MEFLogo.png "MEF logo")До недавнего времени в том случае, если нужно было работать с кодом, неизвестным основному приложению на этапе компиляции (плагины), я по старинке использовал механизм, известный как Reflection. Несколько громоздкий, но своей цели он достигает. Но в 4-м .NET Framework появился встроенный механизм, известный как [MEF (Managed Extensions Framework)](http://mef.codeplex.com/).
 
 Примеров по интернету довольно много, но первое, что мне бросилось в глаза, имело некоторые недостатки:
 
@@ -77,7 +77,7 @@ namespace MEFProc
 
 Запускаем приложение. Поскольку у нас еще нет плагинов, то получаем следующую картинку:
 
-![](http://localhost/wp-content/uploads/2011/07/woPlugins.png "Without plugins")
+![](https://sotnyk.github.io/wp-content/uploads/2011/07/woPlugins.png "Without plugins")
 
 Создаем новый проект – я назвал его StringTransformerPlugins. Сюда также подключаем System.ComponentModel.Composition.dll. В нем два класса с тремя простенькими плагинами. Плагины мы помечаем атрибутом Export с такой же строкой, как мы использовали в атрибуте ImportMany:
 
@@ -136,8 +136,8 @@ copy $(ProjectDir)..StringTransformerPlugins$(OutDir)\*.\* $(TargetDir)
 
 Итак, делаем полную пересборку и запускаем приложение. Получаем:
 
-![](http://localhost/wp-content/uploads/2011/07/WithPlugins.png "With plugins")
+![](https://sotnyk.github.io/wp-content/uploads/2011/07/WithPlugins.png "With plugins")
 
 Плагины загружены и выполнены!
 
-Исходные коды и откомпилированный проект вы можете [взять здесь](http://localhost/code/MEFSimple.rar).
+Исходные коды и откомпилированный проект вы можете [взять здесь](https://sotnyk.github.io/code/MEFSimple.rar).

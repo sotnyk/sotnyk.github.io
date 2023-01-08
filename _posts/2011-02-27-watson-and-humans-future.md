@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=489'
 permalink: /2011/02/27/watson-and-humans-future/
 ---
 
-![](http://localhost/wp-content/uploads/2011/02/220px-Watsons_avatar.jpg "Watson's avatar") Относительно недавно произошло событие, которое заставляет меня сильно задуматься. Новая система от IBM под названием [Watson](http://en.wikipedia.org/wiki/Watson_(artificial_intelligence_software)) победила людей в игре Jeopardy! (на российском телевидении идет аналог – “Своя игра”).
+![](https://sotnyk.github.io/wp-content/uploads/2011/02/220px-Watsons_avatar.jpg "Watson's avatar") Относительно недавно произошло событие, которое заставляет меня сильно задуматься. Новая система от IBM под названием [Watson](http://en.wikipedia.org/wiki/Watson_(artificial_intelligence_software)) победила людей в игре Jeopardy! (на российском телевидении идет аналог – “Своя игра”).
 
 Особо впечатляет то, что вопросы задавались и давались ответы на естественном языке (в ссылках ниже есть видео, где можно посмотреть, как это происходило). Это все приближает Watson к [тесту Тьюринга](http://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%81%D1%82_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0), считающемуся классикой в определении интеллектуальности системы. Только в еще более жестких условиях.  
   

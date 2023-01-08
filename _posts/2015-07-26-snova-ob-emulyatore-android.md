@@ -14,4 +14,4 @@ permalink: /2015/07/26/snova-ob-emulyatore-android/
 
 На данный момент просто выключил галочку Hyper-V в списке компонентов Windows Features. До Cordova еще добежать нужно. Надеюсь, что она будет работать с теми, что идут с Android SDK.
 
-[![disable-hyper-v](http://localhost/wp-content/uploads/2015/07/disable-hyper-v.jpg)](http://localhost/wp-content/uploads/2015/07/disable-hyper-v.jpg)
+[![disable-hyper-v](https://sotnyk.github.io/wp-content/uploads/2015/07/disable-hyper-v.jpg)](https://sotnyk.github.io/wp-content/uploads/2015/07/disable-hyper-v.jpg)

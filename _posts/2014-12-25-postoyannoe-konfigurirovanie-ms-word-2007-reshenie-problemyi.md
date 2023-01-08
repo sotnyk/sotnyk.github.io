@@ -8,13 +8,13 @@ guid: 'http://sotnyk.com/?p=1453'
 permalink: /2014/12/25/postoyannoe-konfigurirovanie-ms-word-2007-reshenie-problemyi/
 ---
 
-[![fixitbutton1](http://localhost/wp-content/uploads/2014/12/fixitbutton1.jpg)](http://localhost/wp-content/uploads/2014/12/fixitbutton1.jpg)Последнее время появилась одна проблемка, до которой никак не доходили руки. MS Word 2007 (я все еще им пользуюсь) начал при каждом запуске стартовать процедуру конфигурирования, которая занимает на моем компе до минуты. К этому моменту обычно уже спешишь что-то сделать, а потом забываешь о проблеме до следующего запуска.
+[![fixitbutton1](https://sotnyk.github.io/wp-content/uploads/2014/12/fixitbutton1.jpg)](https://sotnyk.github.io/wp-content/uploads/2014/12/fixitbutton1.jpg)Последнее время появилась одна проблемка, до которой никак не доходили руки. MS Word 2007 (я все еще им пользуюсь) начал при каждом запуске стартовать процедуру конфигурирования, которая занимает на моем компе до минуты. К этому моменту обычно уже спешишь что-то сделать, а потом забываешь о проблеме до следующего запуска.
 
 Быстро в русскоязычном интернете ничего не нашел, поэтому решил дать описание того, что сработало у меня. Может еще кому пригодится. Найдено в ответ на запрос “ms word 2007 configures every time i open it”
 
 Итак, нужно запустить в режиме администратора консоль. Для этого вбиваем в поиск Windows (в Windows 7 для этого нужно просто начать что-то вводить, после нажатия на кнопку Win, в Windows 8 просто начинаем печатать) сочетание “cmd”. Появившийся пункт кликаем правой кнопкой мышки и выбираем “Запустить как администратор” (у меня под руками только английская винда, поэтому скриншот с англоязычным меню):
 
-[![CmdAdmin](http://localhost/wp-content/uploads/2014/12/CmdAdmin1.jpg)](http://localhost/wp-content/uploads/2014/12/CmdAdmin1.jpg)
+[![CmdAdmin](https://sotnyk.github.io/wp-content/uploads/2014/12/CmdAdmin1.jpg)](https://sotnyk.github.io/wp-content/uploads/2014/12/CmdAdmin1.jpg)
 
 Соглашаемся с запросом на запуск программы от администратора.
 
@@ -24,7 +24,7 @@ permalink: /2014/12/25/postoyannoe-konfigurirovanie-ms-word-2007-reshenie-proble
 
 Вставляем её в консоль (клик правой кнопкой мыши, “вставить”):
 
-[![CmdPaste](http://localhost/wp-content/uploads/2014/12/CmdPaste-300x152.jpg)](http://localhost/wp-content/uploads/2014/12/CmdPaste.jpg)
+[![CmdPaste](https://sotnyk.github.io/wp-content/uploads/2014/12/CmdPaste-300x152.jpg)](https://sotnyk.github.io/wp-content/uploads/2014/12/CmdPaste.jpg)
 
 Нажимаем “ОК”. У меня после этого все заработало нормально.
 

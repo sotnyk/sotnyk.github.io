@@ -12,11 +12,11 @@ permalink: /2010/09/04/nemnogo-o-reklame/
 
 Но недавно, на канале 1+1, увидел интересный приемчик, который лично для меня существенно снизил раздражение:
 
-[![1+1](http://localhost/wp-content/uploads/2010/09/1und1.jpg "1+1")](http://localhost/wp-content/uploads/2010/09/1und1.jpg)  
+[![1+1](https://sotnyk.github.io/wp-content/uploads/2010/09/1und1.jpg "1+1")](https://sotnyk.github.io/wp-content/uploads/2010/09/1und1.jpg)  
   
 Как нетрудно заметить, во время рекламы, прерывающей выпуск новостей на 1 минуту, включается таймер времени до передачи. Как я уже сказал, мне это очень понравилось. Нечто похожее, только в виде индикатора прогресса, можно увидеть сейчас и при рекламе на канале ICTV:
 
-[![ICTV](http://localhost/wp-content/uploads/2010/09/ICTV.jpg "ICTV")](http://localhost/wp-content/uploads/2010/09/ICTV3.jpg)
+[![ICTV](https://sotnyk.github.io/wp-content/uploads/2010/09/ICTV.jpg "ICTV")](https://sotnyk.github.io/wp-content/uploads/2010/09/ICTV3.jpg)
 
 Но данный подход для меня лично гораздо менее эффективен прежде всего потому, что по длине оставшейся части я не могу определить, подойти мне к экрану через минуту или 5 минут (а ICTV замечен в очень длинных рекламных паузах). Так бы я эти паузы использовал на что-то полезное.
 

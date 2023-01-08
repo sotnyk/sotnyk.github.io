@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=438'
 permalink: /2010/12/03/beskonechnost-ne-predel/
 ---
 
-![Suzuki Hayabusa](http://localhost/wp-content/uploads/2010/12/2007ModelwitLE.jpg "Suzuki Hayabusa")Помню, как в мультфильме «Игрушечная история», один из героев повторял: «Бесконечность – не предел». Меня, как человека с рациональным складом ума, это коробило. Возможно, это лишь особенность одного из переводов. Но именно эта фраза вспоминается, когда читаешь следующее:
+![Suzuki Hayabusa](https://sotnyk.github.io/wp-content/uploads/2010/12/2007ModelwitLE.jpg "Suzuki Hayabusa")Помню, как в мультфильме «Игрушечная история», один из героев повторял: «Бесконечность – не предел». Меня, как человека с рациональным складом ума, это коробило. Возможно, это лишь особенность одного из переводов. Но именно эта фраза вспоминается, когда читаешь следующее:
 
 0 to 60 mph (0 to 97 km/h) – 2.47 seconds [(http://en.wikipedia.org/wiki/Suzuki\_Hayabusa)](http://en.wikipedia.org/wiki/Suzuki_Hayabusa).
 

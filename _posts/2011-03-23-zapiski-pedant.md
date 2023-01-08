@@ -10,6 +10,6 @@ permalink: /2011/03/23/zapiski-pedant/
 
 Гугловский корректор правописания отжег:
 
-[![](http://localhost/wp-content/uploads/2011/03/Pisat_raznymi_golosami.png "Писать разными голосами")](http://localhost/wp-content/uploads/2011/03/Pisat_raznymi_golosami.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/03/Pisat_raznymi_golosami.png "Писать разными голосами")](https://sotnyk.github.io/wp-content/uploads/2011/03/Pisat_raznymi_golosami.png)
 
 Это как?

@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=844'
 permalink: /2011/10/09/rukovodstvo-po-eclipse-ide/
 ---
 
-![](http://localhost/wp-content/uploads/2011/10/00-eclipse-logo.jpg "Eclipse logo")Данный пост является переводом с английского [руководства от Ларса Фогеля](http://www.vogella.de/articles/Eclipse/article.html). Мне, как человеку, который в программировании не новичек, а просто переходит с одной платформы (.Net) на другую (Android+Java+Eclipse), данное руководство дало самую необходимую краткую информацию об отличиях и особенностях среды разработки. Поэтому захотелось перевести его – может еще кому-то будет полезно. Заодно и сам перечитал некоторые моменты, упущенные при первом быстром ознакомлении – читаю я часто слишком уж быстро… Разрешение на перевод и публикацию получено от самого Ларса. Кстати, на [его сайте](http://www.vogella.de) немало других коротких, но информативных руководств, так что не исключаю, что еще что-нибудь переведу.
+![](https://sotnyk.github.io/wp-content/uploads/2011/10/00-eclipse-logo.jpg "Eclipse logo")Данный пост является переводом с английского [руководства от Ларса Фогеля](http://www.vogella.de/articles/Eclipse/article.html). Мне, как человеку, который в программировании не новичек, а просто переходит с одной платформы (.Net) на другую (Android+Java+Eclipse), данное руководство дало самую необходимую краткую информацию об отличиях и особенностях среды разработки. Поэтому захотелось перевести его – может еще кому-то будет полезно. Заодно и сам перечитал некоторые моменты, упущенные при первом быстром ознакомлении – читаю я часто слишком уж быстро… Разрешение на перевод и публикацию получено от самого Ларса. Кстати, на [его сайте](http://www.vogella.de) немало других коротких, но информативных руководств, так что не исключаю, что еще что-нибудь переведу.
 
 Все картинки можно посмотреть в оригинальном размере, просто кликнув на них.
 
@@ -79,11 +79,11 @@ Eclipse требует установленную requires [Java](http://www.vog
 
 Для запуска Eclipse, выполните двойной клик на файле “eclipse.exe” (Microsoft Windows) или “eclipse” (Linux / Mac) в папке с распакованным Eclipse. Система предложит вам выбрать рабочее пространство (workspace). Под рабочим пространством подразумевается место, где будут размещаться ваши Java проекты. Выберите пустой каталог и нажмите Ok.
 
-[![](http://localhost/wp-content/uploads/2011/10/01-xstart10-300x121.png "01-xstart10")](http://localhost/wp-content/uploads/2011/10/01-xstart10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/01-xstart10-300x121.png "01-xstart10")](https://sotnyk.github.io/wp-content/uploads/2011/10/01-xstart10.png)
 
 Eclipse запустится и будет показана стартовая страница. Закройте её, нажав “X” рядом с надписью “Welcome”.
 
-[![](http://localhost/wp-content/uploads/2011/10/02-xstart20-300x283.png "02-xstart20")](http://localhost/wp-content/uploads/2011/10/02-xstart20.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/02-xstart20-300x283.png "02-xstart20")](https://sotnyk.github.io/wp-content/uploads/2011/10/02-xstart20.png)
 
 ### 3. Обзор пользовательского интерфейса Eclipse
 
@@ -113,7 +113,7 @@ Eclipse предоставляет перспективы (perspectives), вид
 
 Выберите в меню File -&gt; New-&gt; Java project. Введите “de.vogella.eclipse.ide.first” в качестве имени проекта. Также выберите “Create separate source and output folders”.
 
-[![](http://localhost/wp-content/uploads/2011/10/03-xfirstgany10-255x300.png "03-xfirstgany10")](http://localhost/wp-content/uploads/2011/10/03-xfirstgany10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/03-xfirstgany10-255x300.png "03-xfirstgany10")](https://sotnyk.github.io/wp-content/uploads/2011/10/03-xfirstgany10.png)
 
 Нажмите finish для создания проекта. Новый проект создан и будет показан как папка. Откройте папку “de.vogella.eclipse.ide.first”
 
@@ -123,19 +123,19 @@ Eclipse предоставляет перспективы (perspectives), вид
 
 Выберите папку src, кликните по ней правой кнопкой мыши и выберите New -&gt; Package.
 
-[![](http://localhost/wp-content/uploads/2011/10/04-xfirstgany30-300x61.png "04-xfirstgany30")](http://localhost/wp-content/uploads/2011/10/04-xfirstgany30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/04-xfirstgany30-300x61.png "04-xfirstgany30")](https://sotnyk.github.io/wp-content/uploads/2011/10/04-xfirstgany30.png)
 
-[![](http://localhost/wp-content/uploads/2011/10/05-xfirstgany40-300x202.png "05-xfirstgany40")](http://localhost/wp-content/uploads/2011/10/05-xfirstgany40.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/05-xfirstgany40-300x202.png "05-xfirstgany40")](https://sotnyk.github.io/wp-content/uploads/2011/10/05-xfirstgany40.png)
 
 #### 4.3. Создание Java класса
 
 Кликните правой кнопкой на вашем пакете и выберите New -&gt; Class
 
-[![](http://localhost/wp-content/uploads/2011/10/06-xfirstgany50-300x73.png "06-xfirstgany50")](http://localhost/wp-content/uploads/2011/10/06-xfirstgany50.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/06-xfirstgany50-300x73.png "06-xfirstgany50")](https://sotnyk.github.io/wp-content/uploads/2011/10/06-xfirstgany50.png)
 
 Создайте MyFirstClass, пометьте опцию “public static void main (String\[\] args)”
 
-[![](http://localhost/wp-content/uploads/2011/10/07-xfirstgany60-250x300.png "07-xfirstgany60")](http://localhost/wp-content/uploads/2011/10/07-xfirstgany60.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/07-xfirstgany60-250x300.png "07-xfirstgany60")](https://sotnyk.github.io/wp-content/uploads/2011/10/07-xfirstgany60.png)
 
 В открывшемся редакторе введем следующий код.
 
@@ -155,23 +155,23 @@ public class MyFirstClass {
 
 Теперь запустим полученный код. Для этого удобно кликнуть правой кнопкой над вашим Java-классом и выбрать Run-as-&gt; Java application
 
-[![](http://localhost/wp-content/uploads/2011/10/08-xfirstgany70-300x231.png "08-xfirstgany70")](http://localhost/wp-content/uploads/2011/10/08-xfirstgany70.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/08-xfirstgany70-300x231.png "08-xfirstgany70")](https://sotnyk.github.io/wp-content/uploads/2011/10/08-xfirstgany70.png)
 
 Все готово! Сейчас вы можете увидеть вывод в консоли.
 
-[![](http://localhost/wp-content/uploads/2011/10/09-xfirstgany80-300x70.png "09-xfirstgany80")](http://localhost/wp-content/uploads/2011/10/09-xfirstgany80.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/09-xfirstgany80-300x70.png "09-xfirstgany80")](https://sotnyk.github.io/wp-content/uploads/2011/10/09-xfirstgany80.png)
 
 #### 4.5. Запуск Java-программы извне Eclipse (создаем jar-файл)
 
 Для того, чтобы запустить вашу Java-программу без Eclipse, необходимо экспортировать её как jar-файл. Выберите проект, кликните его правой кнопкой и выберите “Export”.
 
-[![](http://localhost/wp-content/uploads/2011/10/10-xfirstgany90-300x241.png "10-xfirstgany90")](http://localhost/wp-content/uploads/2011/10/10-xfirstgany90.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/10-xfirstgany90-300x241.png "10-xfirstgany90")](https://sotnyk.github.io/wp-content/uploads/2011/10/10-xfirstgany90.png)
 
 Выберите «JAR file», затем нажмите «next». Выберите ваш проект и введите куда его необходимо экспортировать, указав имя для jar-файла. Я назвал его “myprogram.jar”.
 
-[![](http://localhost/wp-content/uploads/2011/10/11-xfirstgany100-300x291.png "11-xfirstgany100")](http://localhost/wp-content/uploads/2011/10/11-xfirstgany100.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/11-xfirstgany100-300x291.png "11-xfirstgany100")](https://sotnyk.github.io/wp-content/uploads/2011/10/11-xfirstgany100.png)
 
-[![](http://localhost/wp-content/uploads/2011/10/12-xfirstgany110-300x290.png "12-xfirstgany110")](http://localhost/wp-content/uploads/2011/10/12-xfirstgany110.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/12-xfirstgany110-300x290.png "12-xfirstgany110")](https://sotnyk.github.io/wp-content/uploads/2011/10/12-xfirstgany110.png)
 
 Жмите «Finish». Это запустит процесс создания jar-фала в выбранном каталоге.
 
@@ -184,7 +184,7 @@ public class MyFirstClass {
 
 `java -classpath myprogram.jar de.vogella.eclipse.ide.first.MyFirstClass`
 
-[![](http://localhost/wp-content/uploads/2011/10/13--300x16.png "13-")](http://localhost/wp-content/uploads/2011/10/13-.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/13--300x16.png "13-")](https://sotnyk.github.io/wp-content/uploads/2011/10/13-.png)
 
 Поздравляю! Вы создали ваш первый Java-проект, крохотную Java-программу и запустили её из-под среды разработки Eclipse и вне нее.
 
@@ -198,7 +198,7 @@ public class MyFirstClass {
 
 Например, наберите «syso» и нажмите \[Ctrl + Space\]. Только что введенный текст будет заменен на «System.out.println(“”)». Или, если вы имеете объект, скажем Person P и вам нужно посмотреть методы данного объекта, вы можете набрать «p.» (или нажать CTRL + Space), что также активирует «content assist».
 
-[![](http://localhost/wp-content/uploads/2011/10/14-xcontentassists10-300x165.png "14-xcontentassists10")](http://localhost/wp-content/uploads/2011/10/14-xcontentassists10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/14-xcontentassists10-300x165.png "14-xcontentassists10")](https://sotnyk.github.io/wp-content/uploads/2011/10/14-xcontentassists10.png)
 
 #### 5.2. Quick Fix
 
@@ -208,7 +208,7 @@ public class MyFirstClass {
 
 Функция Quick Fix очень интеллектуальна, она позволяет создавать новые локальные переменные, поля, методы, классы, обрамлять код с исключениями конструкциями try / catch, приводить выражение к типу переменной и т.п.
 
-[![](http://localhost/wp-content/uploads/2011/10/15-xquickfix10-300x241.png "15-xquickfix10")](http://localhost/wp-content/uploads/2011/10/15-xquickfix10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/15-xquickfix10-300x241.png "15-xquickfix10")](https://sotnyk.github.io/wp-content/uploads/2011/10/15-xquickfix10.png)
 
 ### 6. Использование jars (библиотек)
 
@@ -220,7 +220,7 @@ public class MyFirstClass {
 
 Создайте новый Java-проект “de.vogella.eclipse.ide.jars”. Создайте новую папку с именем “lib” (или используйте уже существующую папку) при помощи клика правой кнопкой на проекте и выбрав New -&gt; Folder
 
-[![](http://localhost/wp-content/uploads/2011/10/16-xexternaljars02-300x109.png "16-xexternaljars02")](http://localhost/wp-content/uploads/2011/10/16-xexternaljars02.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/16-xexternaljars02-300x109.png "16-xexternaljars02")](https://sotnyk.github.io/wp-content/uploads/2011/10/16-xexternaljars02.png)
 
 Выберите в меню File -&gt; Import -&gt; File system. Выберите нужный jar-файл и выберите папку «lib» в качестве целевой.
 
@@ -228,7 +228,7 @@ public class MyFirstClass {
 
 Следующий пример показывает, как может выглядеть результат, если в проект добавить библиотеку «junit-4.4.jar».
 
-[![](http://localhost/wp-content/uploads/2011/10/17-xexternaljars10-300x233.png "17-xexternaljars10")](http://localhost/wp-content/uploads/2011/10/17-xexternaljars10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/17-xexternaljars10-300x233.png "17-xexternaljars10")](https://sotnyk.github.io/wp-content/uploads/2011/10/17-xexternaljars10.png)
 
 #### 6.2. Показ исходников jar-библиотеки
 
@@ -240,7 +240,7 @@ public class MyFirstClass {
 
 Введите местонахождение исходников.
 
-[![](http://localhost/wp-content/uploads/2011/10/18-xadd_source_to_jar-300x253.jpg "18-xadd_source_to_jar")](http://localhost/wp-content/uploads/2011/10/18-xadd_source_to_jar.jpg)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/18-xadd_source_to_jar-300x253.jpg "18-xadd_source_to_jar")](https://sotnyk.github.io/wp-content/uploads/2011/10/18-xadd_source_to_jar.jpg)
 
 Для этого в поле «Location path» введите путь к архиву, либо к папке, содержащей исходные файлы.
 
@@ -252,7 +252,7 @@ public class MyFirstClass {
 
 Введите расположение фалов с описанием API.
 
-[![](http://localhost/wp-content/uploads/2011/10/19-xadd_source_to_jar-300x253.jpg "19-xadd_source_to_jar")](http://localhost/wp-content/uploads/2011/10/19-xadd_source_to_jar.jpg)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/19-xadd_source_to_jar-300x253.jpg "19-xadd_source_to_jar")](https://sotnyk.github.io/wp-content/uploads/2011/10/19-xadd_source_to_jar.jpg)
 
 ### 7. Обновление и установка плагинов
 
@@ -264,7 +264,7 @@ Eclipse предлагает функционал автоматического
 
 Для того, чтобы расширить функционал за счет новых плагинов, выберите пункт меню Help-&gt; Install New Software.
 
-[![](http://localhost/wp-content/uploads/2011/10/20-xUpdateManager10-300x249.png "20-xUpdateManager10")](http://localhost/wp-content/uploads/2011/10/20-xUpdateManager10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/20-xUpdateManager10-300x249.png "20-xUpdateManager10")](https://sotnyk.github.io/wp-content/uploads/2011/10/20-xUpdateManager10.png)
 
 Выберите из списка сайт, откуда вы собираетесь установить новые плагины. Например, для установки новых плагинов от Galileo, выберите «Galileo Update Site».
 
@@ -284,23 +284,23 @@ Eclipse предлагает функционал автоматического
 
 Вид «problems» показывает проблемы ваших проектов. Его можно открыть через пункт меню Windows -&gt; Show View -&gt; Problems
 
-[![](http://localhost/wp-content/uploads/2011/10/21-xproblems10-300x68.png "21-xproblems10")](http://localhost/wp-content/uploads/2011/10/21-xproblems10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/21-xproblems10-300x68.png "21-xproblems10")](https://sotnyk.github.io/wp-content/uploads/2011/10/21-xproblems10.png)
 
 Вы можете настроить этот вид. Например, для того, чтобы настроить отображение проблем только выделенного проекта, выберите “Configure Contents”.
 
-[![](http://localhost/wp-content/uploads/2011/10/22-xproblems20.png "22-xproblems20")](http://localhost/wp-content/uploads/2011/10/22-xproblems20.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/22-xproblems20.png "22-xproblems20")](https://sotnyk.github.io/wp-content/uploads/2011/10/22-xproblems20.png)
 
-[![](http://localhost/wp-content/uploads/2011/10/23-xproblems30-300x265.png "23-xproblems30")](http://localhost/wp-content/uploads/2011/10/23-xproblems30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/23-xproblems30-300x265.png "23-xproblems30")](https://sotnyk.github.io/wp-content/uploads/2011/10/23-xproblems30.png)
 
 #### 8.2. Важные настройки
 
 Eclipse позволяет автоматически добавлять точку с запятой (и некоторые другие элементы).
 
-[![](http://localhost/wp-content/uploads/2011/10/24-xwayofworking10-262x300.png "24-xwayofworking10")](http://localhost/wp-content/uploads/2011/10/24-xwayofworking10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/24-xwayofworking10-262x300.png "24-xwayofworking10")](https://sotnyk.github.io/wp-content/uploads/2011/10/24-xwayofworking10.png)
 
 Также, Eclipse может автоматически форматировать исходный код и организовывать секцию импорта в момент записи на диск.
 
-[![](http://localhost/wp-content/uploads/2011/10/25-xwayofworking30-300x300.png "25-xwayofworking30")](http://localhost/wp-content/uploads/2011/10/25-xwayofworking30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/25-xwayofworking30-300x300.png "25-xwayofworking30")](https://sotnyk.github.io/wp-content/uploads/2011/10/25-xwayofworking30.png)
 
 > Вы можете экспортировать ваши настройки текущего рабочего пространства, используя File -&gt; Export -&gt; General -&gt; Preferences. Аналогично, вы затем можете импортировать их обратно в это, либо другое активное рабочее пространство.
 
@@ -314,15 +314,15 @@ Eclipse позволяет автоматически добавлять точ�
 
 Обычной проблемой в Eclipse является то, что ваши данные в вашем рабочем пространстве растут и постепенно оно становится плохо структурированным. Для дополнительной организации используемых проектов и данных, вы можете использовать рабочие множества. Чтобы настроить ваше рабочее множество, выберите команду меню Package Explorer -&gt; View Menu -&gt; Select Working Sets. Меню вида находится в пределах виджета вида Package Explorer – небольшой треугольник рядом с командой сворачивания и разворачивания в правом верхнем углу.
 
-[![](http://localhost/wp-content/uploads/2011/10/26-xworkingset10-300x191.png "26-xworkingset10")](http://localhost/wp-content/uploads/2011/10/26-xworkingset10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/26-xworkingset10-300x191.png "26-xworkingset10")](https://sotnyk.github.io/wp-content/uploads/2011/10/26-xworkingset10.png)
 
 В открывшемся диалоге нажмите «new» для создания рабочего множества.
 
-[![](http://localhost/wp-content/uploads/2011/10/27-xworkingset20-243x300.png "27-xworkingset20")](http://localhost/wp-content/uploads/2011/10/27-xworkingset20.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/27-xworkingset20-243x300.png "27-xworkingset20")](https://sotnyk.github.io/wp-content/uploads/2011/10/27-xworkingset20.png)
 
 В следующем диалоге выберите «java», выберите папку исходников, которую вы хотите видеть и дайте ей имя. Теперь вы можете легко видеть только те файлы, которые вам нужны в данный момент.
 
-[![](http://localhost/wp-content/uploads/2011/10/28-xworkingset30-300x203.png "28-xworkingset30")](http://localhost/wp-content/uploads/2011/10/28-xworkingset30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/28-xworkingset30-300x203.png "28-xworkingset30")](https://sotnyk.github.io/wp-content/uploads/2011/10/28-xworkingset30.png)
 
 #### 8.5. Синхронизация отображения эксплорера пакетов с редактируемым кодом
 
@@ -330,7 +330,7 @@ Eclipse позволяет автоматически добавлять точ�
 
 Чтобы активировать данную возможность, нажмите “Link with Editor”.
 
-[![](http://localhost/wp-content/uploads/2011/10/29-xlinkwitheditor10-300x50.png "29-xlinkwitheditor10")](http://localhost/wp-content/uploads/2011/10/29-xlinkwitheditor10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/29-xlinkwitheditor10-300x50.png "29-xlinkwitheditor10")](https://sotnyk.github.io/wp-content/uploads/2011/10/29-xlinkwitheditor10.png)
 
 #### 8.6. Шаблоны кода
 
@@ -340,17 +340,17 @@ Eclipse позволяет автоматически добавлять точ�
 
 Для создания такого шаблона, выберите пункт меню Window-&gt;Preferences and Open Java -&gt; Editor -&gt; Templates
 
-[![](http://localhost/wp-content/uploads/2011/10/30-xtemplates10-300x254.png "30-xtemplates10")](http://localhost/wp-content/uploads/2011/10/30-xtemplates10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/30-xtemplates10-300x254.png "30-xtemplates10")](https://sotnyk.github.io/wp-content/uploads/2011/10/30-xtemplates10.png)
 
 Нажмите «New». Создайте следующий шаблон. Макрос «${cursor}» указывает, что курсор должен быть расположен в данной позиции после применения шаблона.
 
-[![](http://localhost/wp-content/uploads/2011/10/31-xtemplates30-300x170.png "31-xtemplates30")](http://localhost/wp-content/uploads/2011/10/31-xtemplates30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/31-xtemplates30-300x170.png "31-xtemplates30")](https://sotnyk.github.io/wp-content/uploads/2011/10/31-xtemplates30.png)
 
 Данный пример помечен ключевым словом “npm”.
 
 Теперь каждый раз, когда мы будем вводить в редакторе Java данное ключевое слово и нажимать Ctrl+Space, оно будет заменяться текстом соответствующего шаблона.
 
-[![](http://localhost/wp-content/uploads/2011/10/32-.png "32-")](http://localhost/wp-content/uploads/2011/10/32-.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2011/10/32-.png "32-")](https://sotnyk.github.io/wp-content/uploads/2011/10/32-.png)
 
 ### 9. Дальнейшие шаги
 

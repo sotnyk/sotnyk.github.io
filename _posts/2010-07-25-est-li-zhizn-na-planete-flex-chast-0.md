@@ -35,18 +35,18 @@ Java 1.6 и выше – берем со странички SUN: <http://www.jav
 2\. Распаковываем ZIP-архив с FLEX4.1 SDK в какой-то каталог (у меня это D:Flex).  
 3\. Устанавливаем FlashDevelop (я поставил с параметрами по умолчанию).  
 4\. Запускаем среду FlashDevelop.  
-[![New Project Screenshot](http://localhost/wp-content/uploads/2010/07/NewProject.png "New Project")](http://localhost/wp-content/uploads/2010/07/NewProject.png)  
+[![New Project Screenshot](https://sotnyk.github.io/wp-content/uploads/2010/07/NewProject.png "New Project")](https://sotnyk.github.io/wp-content/uploads/2010/07/NewProject.png)  
 5\. Создаем новый проект (типа ActionScript3).  
 6\. Компилируем его (F8).  
 7\. Заходим в эксплорере в папку проекта bin, находим там SWF-файл и кликаем над ним правой кнопкой мыши. Переходим в диалог выбора программы по умолчанию.  
- [![Chose Default Application](http://localhost/wp-content/uploads/2010/07/ChoseApp.png "Chose Default Application for SWF")](http://localhost/wp-content/uploads/2010/07/ChoseApp.png)  
+ [![Chose Default Application](https://sotnyk.github.io/wp-content/uploads/2010/07/ChoseApp.png "Chose Default Application for SWF")](https://sotnyk.github.io/wp-content/uploads/2010/07/ChoseApp.png)  
 8\. Выбираем в качестве программы по умолчанию тот дебажный плейер от Adobe, который загрузили ранее.  
 9\. При выскакивании окошек брендмауэра, разрешаем в них и FlashDevelop и дебажный плейер.
 
 После выполнения этих шагов, при нажатии на F5, запускается проект, созданный по умолчанию, срабатывает точка останова, показываются значения переменных. Вроде бы все готово для дальнейшей работы. Загружал я и эталонную среду FlashBuilder (демо позволяет её использовать 60 дней) – должен отметить, что если вы ранее работали в Visual Studio, то FlashDevelop будет вам более привычен. Более похожий интерфейс, те же клавиатурные сокращения. Все-таки Eclipse есть Eclipse. Даже причесанный Adobe, это немного другая галактика, к которой нужно привыкать.
 
 Но есть еще один важный момент для начинающих, который хотелось бы упомянуть. Это литература. Я для ознакомления затянул себе достаточно много разной литературы. Самым лучшим учебником (именно учебником, а не справочником), мною был признан “ActionScript 3.0 для Flash. Подробное руководство. Колин Мук”.  
-[![AS3 for Flash book](http://localhost/wp-content/uploads/2010/07/AS3ForFlashBook.png "AS3 for Flash book")](http://localhost/wp-content/uploads/2010/07/AS3ForFlashBook.png)  
+[![AS3 for Flash book](https://sotnyk.github.io/wp-content/uploads/2010/07/AS3ForFlashBook.png "AS3 for Flash book")](https://sotnyk.github.io/wp-content/uploads/2010/07/AS3ForFlashBook.png)  
 Пока у меня есть только электронный вариант, но ознакомившись, я, конечно же, куплю для подробного чтения бумажный вариант. Куплю в магазине DiaMail ([http://diamail.com.ua/cgi-bin/annot.cgi?id=3104&amp;from=bruht](http://diamail.com.ua/cgi-bin/annot.cgi?id=3104&from=bruht)). Не сочтите за скрытую рекламу – просто я здесь часто покупаю. Доставляют быстро (если выбирать опцию «Через службу ‘Новая Почта’» – обычная почта работает как обычно, т.е., безобразно долго и дорого), а цены несколько ниже, чем в других магазинах. Все это касается Украины.
 
 Ну что же, можно приступать к работе. Продолжение следует… наверное…

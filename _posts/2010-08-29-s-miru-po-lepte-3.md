@@ -14,15 +14,15 @@ permalink: /2010/08/29/s-miru-po-lepte-3/
   
 Возможности его не сверхширокие, но вполне подойдут для несложных расчетов и построения графиков прямо в тексте. С учетом улучшенного рендеринга формул в 2007 версии, можно сказать, что Ворд неплохо развивается в данном направлении:
 
-[![Math for Word](http://localhost/wp-content/uploads/2010/08/Math4Word.png "Math for Word")](http://localhost/wp-content/uploads/2010/08/Math4Word.png)
+[![Math for Word](https://sotnyk.github.io/wp-content/uploads/2010/08/Math4Word.png "Math for Word")](https://sotnyk.github.io/wp-content/uploads/2010/08/Math4Word.png)
 
 При установке, правда может возникнуть небольшая проблема – по умолчанию Word2007 не устанавливает поддержку программирования .Net, а данный математическое расширение её требует. Это исправляется просто – заходим в апплет “Установка и удаление программ”, находим MS Office и выбираем команду “Добавить или удалить компоненты”:
 
-[![Добавить или удалить компоненты](http://localhost/wp-content/uploads/2010/08/WordChangeSetup.png "Добавить или удалить компоненты")](http://localhost/wp-content/uploads/2010/08/WordChangeSetup.png)
+[![Добавить или удалить компоненты](https://sotnyk.github.io/wp-content/uploads/2010/08/WordChangeSetup.png "Добавить или удалить компоненты")](https://sotnyk.github.io/wp-content/uploads/2010/08/WordChangeSetup.png)
 
 Теперь добавляем компонент в инсталляцию:
 
-[![Добавить поддержку .Net](http://localhost/wp-content/uploads/2010/08/NetSupport.png "Добавить поддержку .Net")](http://localhost/wp-content/uploads/2010/08/NetSupport.png)
+[![Добавить поддержку .Net](https://sotnyk.github.io/wp-content/uploads/2010/08/NetSupport.png "Добавить поддержку .Net")](https://sotnyk.github.io/wp-content/uploads/2010/08/NetSupport.png)
 
 Все, можем пробовать.
 

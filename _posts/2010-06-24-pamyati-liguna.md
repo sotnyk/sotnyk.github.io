@@ -12,14 +12,14 @@ permalink: /2010/06/24/pamyati-liguna/
 
 Поэтому просто пересмотрю еще раз фотографии с его последнего юбилея – три года назад. И скажу спасибо судьбе, что встретился с ним.
 
-![](http://localhost/pics/Ligun60/Ligun60_001.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_001.jpg)
 
-![](http://localhost/pics/Ligun60/Ligun60_003.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_003.jpg)
 
-![](http://localhost/pics/Ligun60/Ligun60_007.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_007.jpg)
 
-![](http://localhost/pics/Ligun60/Ligun60_009.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_009.jpg)
 
-![](http://localhost/pics/Ligun60/Ligun60_021.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_021.jpg)
 
-![](http://localhost/pics/Ligun60/Ligun60_054.jpg)
+![](https://sotnyk.github.io/pics/Ligun60/Ligun60_054.jpg)

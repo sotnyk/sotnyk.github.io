@@ -14,19 +14,19 @@ permalink: /2015/07/20/nekotoryie-vozmozhnosti-emulyatora-android/
 
 Прежде всего, как подключиться. У вас в системе должен стоять компонент telnet, либо быть установлен какой-то сторонний:
 
-[![telnet-component](http://localhost/wp-content/uploads/2015/07/telnet-component.jpg)](http://localhost/wp-content/uploads/2015/07/telnet-component.jpg)
+[![telnet-component](https://sotnyk.github.io/wp-content/uploads/2015/07/telnet-component.jpg)](https://sotnyk.github.io/wp-content/uploads/2015/07/telnet-component.jpg)
 
 Далее считаем, что мы находимся в Android Studio.
 
 Запускаем эмулятор андроид-устройства. Обращаем внимание на заголовок его окна:
 
-[![emu-title](http://localhost/wp-content/uploads/2015/07/emu-title.jpg)](http://localhost/wp-content/uploads/2015/07/emu-title.jpg)
+[![emu-title](https://sotnyk.github.io/wp-content/uploads/2015/07/emu-title.jpg)](https://sotnyk.github.io/wp-content/uploads/2015/07/emu-title.jpg)
 
 Первые 4 цифры – это порт, на котором он «слушает» команды. Теперь можем запускать telnet.
 
 Можно сделать это отдельно, а можно прямо в закладке Terminal Android Studio:
 
-[![terminal-console-android-studio](http://localhost/wp-content/uploads/2015/07/terminal-console-android-studio.jpg)](http://localhost/wp-content/uploads/2015/07/terminal-console-android-studio.jpg)
+[![terminal-console-android-studio](https://sotnyk.github.io/wp-content/uploads/2015/07/terminal-console-android-studio.jpg)](https://sotnyk.github.io/wp-content/uploads/2015/07/terminal-console-android-studio.jpg)
 
 Набираем здесь:
 
@@ -36,7 +36,7 @@ telnet localhost 5554
 
 В окне терминала наблюдаем:
 
-[![telnet-connected](http://localhost/wp-content/uploads/2015/07/telnet-connected.jpg)](http://localhost/wp-content/uploads/2015/07/telnet-connected.jpg)
+[![telnet-connected](https://sotnyk.github.io/wp-content/uploads/2015/07/telnet-connected.jpg)](https://sotnyk.github.io/wp-content/uploads/2015/07/telnet-connected.jpg)
 
 Чтобы получить список того, что мы можем «вытворить» с эмулятором, выполним предложенную команду «help»:
 

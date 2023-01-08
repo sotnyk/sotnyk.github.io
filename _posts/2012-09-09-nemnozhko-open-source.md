@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=1215'
 permalink: /2012/09/09/nemnozhko-open-source/
 ---
 
-![](http://localhost/wp-content/uploads/2012/09/codeplex-300x133.jpg "codeplex")Не секрет, что многие open-source проекты активно используются в очень даже платной деятельности различных компаний. И наоборот – часто компании поддерживают различные open-source, не приносящие им прямого дохода. И [наш Iveonik](http://www.iveonik.com) не исключение.
+![](https://sotnyk.github.io/wp-content/uploads/2012/09/codeplex-300x133.jpg "codeplex")Не секрет, что многие open-source проекты активно используются в очень даже платной деятельности различных компаний. И наоборот – часто компании поддерживают различные open-source, не приносящие им прямого дохода. И [наш Iveonik](http://www.iveonik.com) не исключение.
 
 У себя мы давно использовали чужое. Конечно, в рамках лицензий. Как правило, Apache или BSD. Конечно же, давно хотелось дать что-то взамен. Недавно решили выложить две наработки, которые базируются на основе свободных проектов [Lucene.net](http://incubator.apache.org/lucene.net/) и [Snowball](http://snowball.tartarus.org/).
 

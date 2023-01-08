@@ -9,6 +9,6 @@ permalink: /2010/03/22/tezisyi-doklada-scent/
 ---
 
 Выложил обещанные тезисы доклада на конференции в Желтых Водах.  
-Напечатанное: [АЛГОРИТМ КРАУЛИНГА S.C.E.N.T.](http://localhost/Articles/thesises_S.C.E.N.T.docx)  
-Презентация: [АЛГОРИТМ КРАУЛИНГА S.C.E.N.T. презентация](http://localhost/Articles/thesises_S.C.E.N.T.pptx)  
+Напечатанное: [АЛГОРИТМ КРАУЛИНГА S.C.E.N.T.](https://sotnyk.github.io/Articles/thesises_S.C.E.N.T.docx)  
+Презентация: [АЛГОРИТМ КРАУЛИНГА S.C.E.N.T. презентация](https://sotnyk.github.io/Articles/thesises_S.C.E.N.T.pptx)  
 В презентации в комментариях есть кой-чего, не вошедшего в тезисы. Но в общем, планирую еще статью сделать.

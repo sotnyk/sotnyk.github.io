@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=1404'
 permalink: /2014/04/08/pamyati-ottsa/
 ---
 
-[![Сотник Леонид Яковлевич](http://localhost/wp-content/uploads/2014/04/batyaBlog-225x300.jpg "Сотник Леонид Яковлевич")](http://localhost/wp-content/uploads/2014/04/batyaBlog.jpg)
+[![Сотник Леонид Яковлевич](https://sotnyk.github.io/wp-content/uploads/2014/04/batyaBlog-225x300.jpg "Сотник Леонид Яковлевич")](https://sotnyk.github.io/wp-content/uploads/2014/04/batyaBlog.jpg)
 
 Сегодня 3 дня, как его не стало. Он любил жизнь. Любил лучшее, что было в ней. Например, стихи Игоря Губермана.
 

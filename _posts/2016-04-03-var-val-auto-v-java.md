@@ -8,7 +8,7 @@ guid: 'http://sotnyk.com/?p=1609'
 permalink: /2016/04/03/var-val-auto-v-java/
 ---
 
-[![java-var](http://localhost/wp-content/uploads/2016/04/java-var-300x240.jpg)](http://localhost/wp-content/uploads/2016/04/java-var.jpg)Сейчас происходит активное обсуждение возможности введения в новую версию Java автоматического вывода типов, как это сделано в таких языках, как C# или C++. Вот в этих статьях можете почитать “pro et contra” относительно этого предложения:
+[![java-var](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var-300x240.jpg)](https://sotnyk.github.io/wp-content/uploads/2016/04/java-var.jpg)Сейчас происходит активное обсуждение возможности введения в новую версию Java автоматического вывода типов, как это сделано в таких языках, как C# или C++. Вот в этих статьях можете почитать “pro et contra” относительно этого предложения:
 
 - [Var и val в Java?](https://habrahabr.ru/post/280188/)
 - [Ключевое слово «var» в Java: пожалуйста, только не это](https://habrahabr.ru/post/280075/)
