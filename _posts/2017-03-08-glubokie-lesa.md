@@ -10,7 +10,7 @@ permalink: /2017/03/08/glubokie-lesa/
 
 Принцип глубоких моделей в Machine Learning прост – имеется несколько уровней, каждый из которых обрабатывает свой тип признаков. С каждым уровнем признаки становятся все более абстрактными (упрощенно – линия, окружность, лицо и т.п.) Но при всей простоте, до сего момента мы фактически имеем только один реально работающий тип глубоких моделей – глубокие (глубинные) нейронные сети. Именно поэтому интересны вот такие материалы, как статья [Deep Forest: Towards An Alternative to Deep Neural Networks](https://arxiv.org/abs/1702.08835). Модель, с результатами, сравнимыми для нейронных сетей, но не требующая GPU. Вот [здесь обсуждение](https://www.reddit.com/r/MachineLearning/comments/5x4a52/r_deep_forest_towards_an_alternative_to_deep/) модели. Кое-кто из известных уже даже собирается имплементировать данный функционал в своей библиотеке – <https://github.com/Microsoft/LightGBM/issues/331>. Но пока пример того, что дает гугление по Deep Forest:
 
-<iframe allowfullscreen="" frameborder="0" height="360" loading="lazy" src="https://www.youtube.com/embed/_SN0ZyE2gyQ" width="640"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lIF5EEneWEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Если глубокие леса “взлетят”, то дальше будет очень сложно находить информацию по этой группе.
 

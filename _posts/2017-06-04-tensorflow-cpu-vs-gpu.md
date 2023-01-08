@@ -19,44 +19,44 @@ permalink: /2017/06/04/tensorflow-cpu-vs-gpu/
 Для того, чтобы включить или выключить использование GPU, не изменяя программу, используем переменную окружения CUDA\_VISIBLE\_DEVICES.
 
 Для отключения даем в консоли такую команду:  
-set CUDA\_VISIBLE\_DEVICES=””
+```set CUDA_VISIBLE_DEVICES=””```
 
 Опять включить можем просто удалив данную переменную:  
-set CUDA\_VISIBLE\_DEVICES=
+```set CUDA_VISIBLE_DEVICES=```
 
 Чтобы посчитать суммарное время выполнения примера, я использовал небольшую [утилитку ptime](http://www.pc-tools.net/win32/ptime/). Загрузим её и дальше просто добавляем в начало команды ptime и она в конце вывода выводит нам суммарное время.
 
 Итак, меряем. Запускаем Anaconda prompt. У меня исходники этого примера из тензорфлоу находятся в d:gittensorflowtensorflowexamplestutorialsword2vec, вы же у себя используйте свои пути. Первый запуск – просто для того, чтобы загрузились файлы с данными – при последующих запусках (с ptime) они уже не загружаются. Лишний вывод опущу.
 
-\[code\]  
-&gt; d:  
-&gt; cd d:gittensorflowtensorflowexamplestutorialsword2vec  
-&gt; python word2vec\_basic.py  
+```
+> d:  
+> cd d:\git\tensorflow\tensorflowexamples\tutorials\word2vec  
+> python word2vec_basic.py  
 …  
-&gt; ptime python word2vec\_basic.py  
+> ptime python word2vec_basic.py  
 …  
 Execution time: 321.722 s  
-&gt; set CUDA\_VISIBLE\_DEVICES=””  
-&gt; ptime python word2vec\_basic.py  
+> set CUDA_VISIBLE_DEVICES=””  
+> ptime python word2vec_basic.py  
 …  
 Execution time: 186.025 s  
-\[/code\]
+```
 
 Поясню результат – первый раз мы запустили на GPU и время выполнения оказалось почти вдвое больше чем на чистом CPU! Печально конечно, но объяснимо – если модель нейросети большая и идет постоянная загрузка-выгрузка её, то на этом можно достаточно много потерять. Конечно, нужно будет подробнее посмотреть, о чем пример – наверняка, там не обучение самой модели word2vec (для этого самим гуглом использовался немаленький кластер), а какое-то использование уже готовой модели, но сейчас скорее важно, что в некоторых сценариях использование GPU не ускоряет работу, а наоборот.
 
 Но все же – что будет, если самостоятельно учить сетку? Попробуем на сей раз заезженный вдоль и поперек MNIST (разогревочный запуск я опущу):
 
-\[code\]  
-&gt; cd D:gittensorflowtensorflowexamplestutorialsmnist  
-&gt; set CUDA\_VISIBLE\_DEVICES=  
-&gt; ptime python mnist\_deep.py  
+```
+> cd D:\git\tensorflow\tensorflowexamples\tutorial\smnist  
+> set CUDA_VISIBLE_DEVICES=  
+> ptime python mnist_deep.py  
 …  
 Execution time: 104.393 s  
-&gt; set CUDA\_VISIBLE\_DEVICES=””  
-&gt; ptime python mnist\_deep.py  
+> set CUDA_VISIBLE_DEVICES=””  
+> ptime python mnist_deep.py  
 …  
 Execution time: 2663.202 s  
-\[/code\]
+```
 
 Фух, ну наконец-то! На классическом примере, GPU дала скорость в 25 раз больше, чем CPU. Все-же она того стоила…
 

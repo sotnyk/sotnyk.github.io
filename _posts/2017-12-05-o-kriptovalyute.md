@@ -8,7 +8,9 @@ guid: 'https://sotnyk.ml/?p=1752'
 permalink: /2017/12/05/o-kriptovalyute/
 ---
 
-[![](https://sotnyk.github.io/wp-content/uploads/2017/12/karbovanets-300x288.jpg)](https://sotnyk.github.io/wp-content/uploads/2017/12/karbovanets.jpg)Не являюсь фанатом направления криптовалют, хотя общие принципы в общем-то понятны. И тут попалась на глаза статья “[Майним Карбованець для пополнения интернета](https://itc.ua/blogs/maynim-karbovanets-dlya-popolneniya-interneta/)“. Подкупила простота инструкции и решил все же попробовать – благо видеокарта NVIDIA GeForce GTX 1080 в наличии имеется.
+[![](https://sotnyk.github.io/wp-content/uploads/2017/12/karbovanets-300x288.jpg)](https://sotnyk.github.io/wp-content/uploads/2017/12/karbovanets.jpg)
+
+Не являюсь фанатом направления криптовалют, хотя общие принципы в общем-то понятны. И тут попалась на глаза статья “[Майним Карбованець для пополнения интернета](https://itc.ua/blogs/maynim-karbovanets-dlya-popolneniya-interneta/)“. Подкупила простота инструкции и решил все же попробовать – благо видеокарта NVIDIA GeForce GTX 1080 в наличии имеется.
 
 Сделал все по инструкции. Также, как и у автора, было необходимо поправить конфиг утилиты-майнера, чтобы она не вылетала на моей видеокарте. Оборудование подхватилось без проблем, видеокарта и процессор были загружены по самое нехочу – работать стало практически невозможно.
 
