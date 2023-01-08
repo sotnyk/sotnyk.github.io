@@ -8,33 +8,35 @@ guid: 'http://sotnyk.com/?p=1236'
 permalink: /2012/09/21/sluchai-iz-praktiki-2-refaktorim/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2012/09/Sluchai-is-praktiki-198x300.jpg "Sluchai-is-praktiki")Небольшое лирическое отступление. Долгое время это слово больше читал, чем произносил или слышал. И поперва приспособился его произносить про себя с ударением на “о” – рефактОринг. Видимо потому, что возникли ассоциации со словом “фактория”, которое слышал в фильмах про дореволюционную Россию. Меня поправили. Вроде бы стал говорить правильно, с ударением на “а”. Хотя, иногда может проскользнуть старый вариант. Надеюсь, это не так режет слух, как мне неправильное ударение в словах “позвоним”, “созвонимся” и т.п. 😛
+![](https://sotnyk.github.io/wp-content/uploads/2012/09/Sluchai-is-praktiki-198x300.jpg "Sluchai-is-praktiki")
+
+Небольшое лирическое отступление. Долгое время это слово больше читал, чем произносил или слышал. И поперва приспособился его произносить про себя с ударением на “о” – рефактОринг. Видимо потому, что возникли ассоциации со словом “фактория”, которое слышал в фильмах про дореволюционную Россию. Меня поправили. Вроде бы стал говорить правильно, с ударением на “а”. Хотя, иногда может проскользнуть старый вариант. Надеюсь, это не так режет слух, как мне неправильное ударение в словах “позвоним”, “созвонимся” и т.п. 😛
 
 Итак, ближе к делу. Имеется кусок кода, который занимается разбиением работы на порции и применением к ним того или иного экшена:  
   
-\[csharp\]  
-public static void BatchProcessing&lt;T&gt;(  
- this IEnumerable&lt;T&gt; list,  
+```csharp
+public static void BatchProcessing<T>(  
+ this IEnumerable<T> list,  
  int batchSize,  
- Action&lt;IEnumerable&lt;T&gt;&gt; action)  
+ Action<IEnumerable<T>> action)  
 {  
- var data = list is List&lt;T&gt; ?  
- list as List&lt;T&gt; : list.ToList();  
+ var data = list is List<T> ?  
+ list as List<T> : list.ToList();  
  long total = data.Count;  
  int processed = 0;  
- while (data.Count &gt; 0)  
+ while (data.Count > 0)  
  {  
  int left = data.Count;  
- batchSize = left &gt; batchSize ? batchSize : left;  
+ batchSize = left > batchSize ? batchSize : left;  
  processed += batchSize;  
  var batchList = list.Take(batchSize).ToList();  
  data.RemoveRange(0, batchSize);  
  Trace.TraceInformation("Processed {0:0.00}% ….",  
- (double)100 \* processed / total);  
+ (double)100 * processed / total);  
  action(batchList);  
  }  
 }  
-\[/csharp\]
+```
 
 **Круг первый**
 
@@ -46,75 +48,75 @@ public static void BatchProcessing&lt;T&gt;(
 
 Итак, вот сами тесты:
 
-\[csharp\]  
+```csharp
 …  
-private List&lt;int&gt; \_testSequence = null;  
+private List<int> _testSequence = null;  
 …  
-\[TestInitialize()\]  
+[TestInitialize()]  
 public void MyTestInitialize()  
 {  
- \_testSequence = (new int\[\]{1, 2, 3, 4, 5, 6, 7, 8,  
+ _testSequence = (new int[]{1, 2, 3, 4, 5, 6, 7, 8,  
  9, 10, 11, 12, 13}).ToList();  
 }  
 …  
-\[TestMethod()\]  
-public void BatchProcessing\_TestPortionsCounting()  
+[TestMethod()]  
+public void BatchProcessing_TestPortionsCounting()  
 {  
  int portionCounter = 0;  
- \_testSequence.ToArray().BatchProcessing(2,  
- x =&gt; portionCounter++);  
+ _testSequence.ToArray().BatchProcessing(2,  
+  x => portionCounter++);  
  Assert.AreEqual(7, portionCounter);
 
  portionCounter = 0;  
- \_testSequence.ToArray().BatchProcessing(1,  
- x =&gt; portionCounter++);  
+ _testSequence.ToArray().BatchProcessing(1,  
+  x => portionCounter++);  
  Assert.AreEqual(13, portionCounter);
 
  portionCounter = 0;  
- \_testSequence.ToArray().BatchProcessing(13,  
- x =&gt; portionCounter++);  
+ _testSequence.ToArray().BatchProcessing(13,  
+  x => portionCounter++);  
  Assert.AreEqual(1, portionCounter);
 
  portionCounter = 0;  
- \_testSequence.ToArray().BatchProcessing(100,  
- x =&gt; portionCounter++);  
+ _testSequence.ToArray().BatchProcessing(100,  
+  x => portionCounter++);  
  Assert.AreEqual(1, portionCounter);  
 }
 
-\[TestMethod()\]  
-public void BatchProcessing\_TestEveryElementMustBePlacedOneTime()  
+[TestMethod()]  
+public void BatchProcessing_TestEveryElementMustBePlacedOneTime()  
 {  
- int expected = \_testSequence.Sum();  
+ int expected = _testSequence.Sum();  
  int sum = 0;
 
- \_testSequence.ToArray().BatchProcessing(2, x =&gt;  
+ _testSequence.ToArray().BatchProcessing(2, x =>  
  {  
- sum += x.Sum();  
+  sum += x.Sum();  
  });  
  Assert.AreEqual(expected, sum, "Check 2");
 
  sum = 0;  
- \_testSequence.ToArray().BatchProcessing(1, x =&gt;  
+ _testSequence.ToArray().BatchProcessing(1, x =>  
  {  
- sum += x.Sum();  
+  sum += x.Sum();  
  });  
  Assert.AreEqual(expected, sum, "Check 1");
 
  sum = 0;  
- \_testSequence.ToArray().BatchProcessing(13, x =&gt;  
+ _testSequence.ToArray().BatchProcessing(13, x =>  
  {  
- sum += x.Sum();  
+  sum += x.Sum();  
  });  
  Assert.AreEqual(expected, sum, "Check 13");
 
  sum = 0;  
- \_testSequence.ToArray().BatchProcessing(100, x =&gt;  
+ _testSequence.ToArray().BatchProcessing(100, x =>  
  {  
- sum += x.Sum();  
+  sum += x.Sum();  
  });  
  Assert.AreEqual(expected, sum, "Check 100");  
 }  
-\[/csharp\]
+```
 
 Тут куча повторов, я знаю, но об этом ниже.
 
@@ -124,15 +126,15 @@ public void BatchProcessing\_TestEveryElementMustBePlacedOneTime()
 
 Хм, в чем же дело? А дело в банальной описке. Давайте вернемся к листингу исходной реализации. Обратите внимание на строку:
 
-\[csharp\]  
+```csharp
 var batchList = list.Take(batchSize).ToList();  
-\[/csharp\]
+```
 
 Таким образом, метод каждый раз берем элементы не из переменной data, а из параметра list. Удаляются же элементы правильно, у data:
 
-\[csharp\]  
+```csharp
 data.RemoveRange(0, batchSize);  
-\[/csharp\]
+```
 
 Ух-ты! Как же раньше не заметили-то? Ведь метод тысячи раз обрабатывал одну и ту же, первую, порцию данных.
 
@@ -142,24 +144,24 @@ data.RemoveRange(0, batchSize);
 
 Ну, теперь можно собственно рефакторить. Вот новая реализация:
 
-\[csharp\]  
-public static void BatchProcessing&lt;T&gt;(  
- this IEnumerable&lt;T&gt; list,  
+```csharp
+public static void BatchProcessing<T>(  
+ this IEnumerable<T> list,  
  int batchSize,  
- Action&lt;IEnumerable&lt;T&gt;&gt; action)  
+ Action<IEnumerable<T>> action)  
 {  
- var data = list is List&lt;T&gt; ?  
- list as List&lt;T&gt; : list.ToList();  
- for (int i = 0; i &lt; data.Count; i += batchSize)  
+ var data = list is List<T> ?  
+ list as List<T> : list.ToList();  
+ for (int i = 0; i < data.Count; i += batchSize)  
  {  
- int currentPortionSize =  
- Math.Min(batchSize, data.Count – i);  
- Trace.TraceInformation("Processed {0:0.00}% ….",  
- (double)100 \* i / data.Count);  
- action(data.GetRange(i, currentPortionSize));  
+  int currentPortionSize =  
+  Math.Min(batchSize, data.Count – i);  
+  Trace.TraceInformation("Processed {0:0.00}% ….",  
+  (double)100 \* i / data.Count);  
+  action(data.GetRange(i, currentPortionSize));  
  }  
 }  
-\[/csharp\]
+```
 
 Коротко и эффективно. Без сдвигов миллионов объектов. Юнит тесты проходят, все хорошо.
 
@@ -167,9 +169,9 @@ public static void BatchProcessing&lt;T&gt;(
 
 А дело вот в чем:
 
-\[csharp\]  
-var data = list is List&lt;T&gt; ? list as List&lt;T&gt; : list.ToList();  
-\[/csharp\]
+```csharp
+var data = list is List<T> ? list as List<T> : list.ToList();  
+```
 
 Имеющийся код передавал в метод List. Соответственно, выполнение шло по ветке, которая не копирует список, а просто приводит его к нужному типу. В этом случае, мы можем обращаться хоть к data, хоть к list – мы будем работать с одним и тем же объектом. Именно это обстоятельство и спасало.
 
@@ -177,30 +179,30 @@ var data = list is List&lt;T&gt; ? list as List&lt;T&gt; : list.ToList();
 
 А, в общем, мы тут наблюдаем отход от строгой типизации, за что поплатились, получив мину замедленного действия. Она срабатывает, если передан массив (тихо, безо всякого объявления) или Read-only список (тут хотя бы сразу получим эксепшен). Эта проверка на тип в рантайме плохо пахнет. Уйдем с темной дороги и вернемся к силе статической типизации, используя перегрузку:
 
-\[csharp\]  
-public static void BatchProcessing&lt;T&gt;(  
- this IEnumerable&lt;T&gt; list,  
+```csharp
+public static void BatchProcessing<T>(  
+ this IEnumerable<T> list,  
  int batchSize,  
- Action&lt;IEnumerable&lt;T&gt;&gt; action)  
+ Action<IEnumerable<T>> action)  
 {  
  list.ToList().BatchProcessing(batchSize, action);  
 }
 
-public static void BatchProcessing&lt;T&gt;(  
- this List&lt;T&gt; list,  
+public static void BatchProcessing<T>(  
+ this List<T> list,  
  int batchSize,  
- Action&lt;IEnumerable&lt;T&gt;&gt; action)  
+ Action<IEnumerable<T>> action)  
 {  
- for (int i = 0; i &lt; list.Count; i += batchSize)  
+ for (int i = 0; i < list.Count; i += batchSize)  
  {  
  int currentPortionSize = Math.Min(batchSize,  
  list.Count – i);  
  Trace.TraceInformation("Processed {0:0.00}% ….",  
- (double)100 \* i / list.Count);  
+ (double)100 * i / list.Count);  
  action(list.GetRange(i, currentPortionSize));  
  }  
 }  
-\[/csharp\]
+```
 
 Вот теперь, я доволен. Как мне кажется, код стал проще и понятнее (не говоря про эффективность), исправлена “мина”. Конечно, второй метод тоже нужно “закрепить” юнит-тестами. Мой первый вариант тестов, который был приведен выше, грешит повторяющимися кодами – оставляю переписать их в качестве упражнения на рефАкторинг. В реальном проекте я их поправил. И проверки входных параметров можно бы добавить – тут, я каюсь, оставил, как было…
 

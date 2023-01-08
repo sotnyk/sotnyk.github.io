@@ -8,17 +8,19 @@ guid: 'http://sotnyk.com/?p=1226'
 permalink: /2012/09/16/sluchai-iz-praktiki-sluchay-1-nastraivaem-plinq/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2012/09/Sluchai-is-praktiki-198x300.jpg "Sluchai-is-praktiki")Дано: есть утилита, которая обрабатывает данные от многих магазинов. Обработка идет на достаточно мощном компьютере, имеющем 8 ядер, поэтому для ускорения она распараллеливается. Каждый магазин обрабатывается в своем потоке. Использование PLINQ, делает такое распараллеливание делом достаточно нехитрым.
+![](https://sotnyk.github.io/wp-content/uploads/2012/09/Sluchai-is-praktiki-198x300.jpg "Sluchai-is-praktiki")
+
+Дано: есть утилита, которая обрабатывает данные от многих магазинов. Обработка идет на достаточно мощном компьютере, имеющем 8 ядер, поэтому для ускорения она распараллеливается. Каждый магазин обрабатывается в своем потоке. Использование PLINQ, делает такое распараллеливание делом достаточно нехитрым.
 
 Вот исходный код:
 
-\[csharp\]  
-static void UpdateDatabase(FileInfo\[\] xmlFeeds)  
+```csharp
+static void UpdateDatabase(FileInfo[] xmlFeeds)  
 {  
- xmlFeeds.AsParallel().ForAll(xml =&gt;  
+ xmlFeeds.AsParallel().ForAll(xml =>  
  {  
  …  
-\[/csharp\]
+```
 
 Дальше идет собственно код, который обрабатывает информацию от каждого магазина отдельно. В чем загвоздка? А она в том, что все магазины очень разные по размеру. Одни присылают файл меньше мегабайта, другие по 600 мегабайт. По умолчанию же PLINQ для тех, кто реализует IList, реализует такую стратегию разбиения на порции:
 
@@ -32,18 +34,18 @@ static void UpdateDatabase(FileInfo\[\] xmlFeeds)
 
 Для того, чтобы узнать, какая порция самая тяжелая, нам необходимо разобрать XML файл, поэтому напрямую мы не будем пользоваться этим критерием, а воспользуемся сильно коррелированной с ним характеристикой – размером обрабатываемого файла. А для того, чтобы явно указать PLINQ, что порции необходимо подавать воркерам динамически, по мере их освобождения, мы используем класс Partitioner, в конструкторе которого указываем параметр loadBalance=true. Получаем следующий код:
 
-\[csharp\]  
-static void UpdateDatabase(FileInfo\[\] xmlFeeds)  
+```csharp
+static void UpdateDatabase(FileInfo[] xmlFeeds)  
 {  
  // Sort by file size from big to small  
  var sortedXmlFeeds = xmlFeeds  
- .OrderByDescending(f =&gt; f.Length).ToList();  
+ .OrderByDescending(f => f.Length).ToList();  
  // And use sectioning by blocks to right work balancing  
  Partitioner.Create(sortedXmlFeeds, true).AsParallel()  
- .ForAll(xml =&gt;  
+ .ForAll(xml =>  
  {  
  …  
-\[/csharp\]
+```
 
 Такая модификация кода на практике дала прибавку в скорости работы более, чем в 2 раза по сравнению с предыдущей версией (зависит от используемых данных).
 
