@@ -8,7 +8,7 @@ guid: 'https://sotnyk.ga/?p=1831'
 permalink: /2019/05/31/zashhita-kursovogo/
 ---
 
-![«Data Science. Natural Language Processing»](https://prjctr.com.ua/assets/events/1958/5ce7ba79f20cf/nlp2019.png)
+![«Data Science. Natural Language Processing»](https://sotnyk.github.io/wp-content/uploads/2019/05/nlp2019.jpg)
 
 На 3 месяца переехал в Киев, чтобы проходить офф-лайн курс по NLP. И вот они подошли к концу, завтра уже защита курсового. Дам на слайде ссылку на свой блог – у него простое имя, поэтому будет проще найти ссылки.
 
