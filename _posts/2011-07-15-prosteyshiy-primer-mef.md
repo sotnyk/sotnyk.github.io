@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=799'
 permalink: /2011/07/15/prosteyshiy-primer-mef/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2011/07/MEFLogo.png "MEF logo")До недавнего времени в том случае, если нужно было работать с кодом, неизвестным основному приложению на этапе компиляции (плагины), я по старинке использовал механизм, известный как Reflection. Несколько громоздкий, но своей цели он достигает. Но в 4-м .NET Framework появился встроенный механизм, известный как [MEF (Managed Extensions Framework)](http://mef.codeplex.com/).
+![](https://sotnyk.github.io/wp-content/uploads/2011/07/MEFLogo.png "MEF logo")
+
+До недавнего времени в том случае, если нужно было работать с кодом, неизвестным основному приложению на этапе компиляции (плагины), я по старинке использовал механизм, известный как Reflection. Несколько громоздкий, но своей цели он достигает. Но в 4-м .NET Framework появился встроенный механизм, известный как [MEF (Managed Extensions Framework)](http://mef.codeplex.com/).
 
 Примеров по интернету довольно много, но первое, что мне бросилось в глаза, имело некоторые недостатки:
 
@@ -21,50 +23,44 @@ permalink: /2011/07/15/prosteyshiy-primer-mef/
 
 Дописываем в program.cs такие строки:
 
-\[csharp\]  
+```csharp
 …  
-using System.ComponentModel.Composition;  
-using System.ComponentModel.Composition.Hosting;  
-using System.IO;  
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
+using System.IO;
 using System.Reflection;
-
-namespace MEFProc  
-{  
- public delegate string StringTransformer(string src);
-
- class Program  
- {  
- \[ImportMany(“StringTransformer”)\]  
- public IEnumerable<stringtransformer> Transformers  
- { get; set; }</stringtransformer>
-
- public void Run()  
- {  
- AggregateCatalog catalog = new AggregateCatalog();  
- catalog.Catalogs.Add(new DirectoryCatalog(  
- Path.GetDirectoryName(  
- new Uri(Assembly.GetExecutingAssembly()  
- .CodeBase).LocalPath)));
-
- var container = new CompositionContainer(catalog);  
- container.SatisfyImportsOnce(this);
-
- foreach (var transformer in Transformers)  
- {  
- Console.WriteLine(  
- transformer(“Sample StRiNg.”));  
- }  
- Console.WriteLine(“Press any key”);  
- Console.ReadKey();  
- }
-
- static void Main(string\[\] args)  
- {  
- new Program().Run();  
- }  
- }  
-}  
-\[/csharp\]
+namespace MEFProc
+{
+    public delegate string StringTransformer(string src);
+    class Program
+    {
+        [ImportMany("StringTransformer")]
+        public IEnumerable<stringtransformer> Transformers
+            { get; set; }
+        public void Run()
+        {
+            AggregateCatalog catalog = new AggregateCatalog();
+            catalog.Catalogs.Add(new DirectoryCatalog(
+                Path.GetDirectoryName(
+                    new Uri(Assembly.GetExecutingAssembly()
+                                   .CodeBase).LocalPath)));
+            var container = new CompositionContainer(catalog);
+            container.SatisfyImportsOnce(this);
+            foreach (var transformer in Transformers)
+            {
+                Console.WriteLine(
+                    transformer("Sample StRiNg."));
+            }
+            Console.WriteLine("Press any key");
+            Console.ReadKey();
+        }
+        static void Main(string[] args)
+        {
+            new Program().Run();
+        }
+    }
+}
+```
 
 Что мы здесь делаем:
 
@@ -82,53 +78,52 @@ namespace MEFProc
 Создаем новый проект – я назвал его StringTransformerPlugins. Сюда также подключаем System.ComponentModel.Composition.dll. В нем два класса с тремя простенькими плагинами. Плагины мы помечаем атрибутом Export с такой же строкой, как мы использовали в атрибуте ImportMany:
 
 Plugs.cs:  
-\[csharp\]  
+```csharp
 …  
 using System.ComponentModel.Composition;
-
-namespace StringTransformerPlugins  
-{  
- public class Plugs  
- {  
- \[Export(“StringTransformer”)\]  
- public string UpperCase(string src)  
- {  
- return src.ToUpperInvariant();  
- }
-
- \[Export(“StringTransformer”)\]  
- public string LowerCase(string src)  
- {  
- return src.ToLowerInvariant();  
- }  
- }  
-}  
-\[/csharp\]
+namespace StringTransformerPlugins
+{
+    public class Plugs
+    {
+        [Export("StringTransformer")]
+        public string UpperCase(string src)
+        {
+            return src.ToUpperInvariant();
+        }
+        [Export("StringTransformer")]
+        public string LowerCase(string src)
+        {
+            return src.ToLowerInvariant();
+        }
+    }
+}
+```
 
 AnagramPlug.cs  
-\[csharp\]  
+```csharp
 …  
 using System.ComponentModel.Composition;
-
-namespace StringTransformerPlugins  
-{  
- public class AnagramPlug  
- {  
- \[Export(“StringTransformer”)\]  
- public string MakeAnagram(string src)  
- {  
- var result = new StringBuilder();  
- for (int i = src.Length – 1; i &gt;= 0; –i)  
- result.Append(src\[i\]);  
- return result.ToString();  
- }  
- }  
-}  
-\[/csharp\]
+namespace StringTransformerPlugins
+{
+    public class AnagramPlug
+    {
+        [Export("StringTransformer")]
+        public string MakeAnagram(string src)
+        {
+            var result = new StringBuilder();
+            for (int i = src.Length-1; i >= 0; --i)
+                result.Append(src[i]);
+            return result.ToString();
+        }
+    }
+}
+```
 
 В свойства основного приложения, в раздел Build Events / Post build event command line добавляем макрос, копирующий сборку StringTransformerPlugins.dll к exe-файлу:
 
+```
 copy $(ProjectDir)..StringTransformerPlugins$(OutDir)\*.\* $(TargetDir)
+```
 
 Это нам необходимо, поскольку основное приложение не ссылается на эту сборку (она вообще может быть в другом солюшене – здесь мы их компилируем вместе только для удобства).
 
