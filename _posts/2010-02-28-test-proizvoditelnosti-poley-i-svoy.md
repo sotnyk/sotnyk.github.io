@@ -41,14 +41,14 @@ static void TestSum(TestSumProc proc, int repeats, string title)
 {
 DateTime start = DateTime.Now;
 int res = proc(repeats);
-Console.WriteLine(“Test {0} for {1} repeats. Total processing time: {2} msec. Result={3}”,
+Console.WriteLine("Test {0} for {1} repeats. Total processing time: {2} msec. Result={3}",
 title, repeats, (DateTime.Now – start).TotalMilliseconds, res);
 }
 
 static int SumInField(int repeats)
 {
 ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
-for (int i = repeats; i > 0; –i)
+for (int i = repeats; i > 0; –-i)
 instance.IntField += 2;
 return instance.IntField;
 }
@@ -56,7 +56,7 @@ return instance.IntField;
 static int SumInProperty(int repeats)
 {
 ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
-for (int i = repeats; i > 0; –i)
+for (int i = repeats; i > 0; –-i)
 instance.IntProperty += 2;
 return instance.IntProperty;
 }
@@ -66,7 +66,7 @@ unsafe static int SumByPointer(int repeats)
 ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
 fixed (int* _field = &instance.IntField)
 {
-while (–repeats >= 0)
+while (-–repeats >= 0)
 (*_field) += 2;
 }
 return instance.IntField;

@@ -56,9 +56,9 @@ class Program
                 testName = @"Cycle ""foreach""";
                 break;
             case 4:
-                for (int i = ElementsNumber &#8211; 1, j = 0; i >= 0; )
+                for (int i = ElementsNumber - 1, j = 0; i >= 0; )
                 {
-                    if (0 < (j = src[i&#8211;]))
+                    if (0 < (j = src[i--]))
                         res.Add(j);
                 }
                 testName = @"Cycle ""optimized for""";
