@@ -12,7 +12,7 @@ permalink: /2011/01/22/technical-evolution-examples/
 
 **Векторизуем изображение генетическим алгоритмом.**
 
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="100" style="height: 390px; width: 640px;" width="100"><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><param name="src" value="http://www.youtube.com/v/Rnf6ervTUzc?version=3"></param><param name="allowfullscreen" value="true"></param><embed allowfullscreen="true" allowscriptaccess="always" height="100" src="http://www.youtube.com/v/Rnf6ervTUzc?version=3" style="height: 390px; width: 640px;" type="application/x-shockwave-flash" width="100"></embed></object>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rnf6ervTUzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <http://habrahabr.ru/blogs/algorithm/68323/>. Несмотря на название, это совсем не ГА, поскольку нет важного элемента – скрещивания (кроссовер). Но, вполне может быть назван представителем эволюционных алгоритмов. Особенно интересно то, что идет вместе с исходными кодами, поэтому не нужно переписывать все самостоятельно для того, чтобы «поиграться» с идеей. Да, кстати – респект автору клипа за саундтрек.  
   
@@ -27,7 +27,9 @@ permalink: /2011/01/22/technical-evolution-examples/
 ![](https://sotnyk.github.io/wp-content/uploads/2011/01/Vehicle2-300x241.png "Vehicle2")
 
 **Очень понравившийся мне пример сборки часов**  
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="100" style="height: 390px; width: 640px;" width="100"><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><param name="src" value="http://www.youtube.com/v/dN_6B1auRV4?version=3"></param><param name="allowfullscreen" value="true"></param><embed allowfullscreen="true" allowscriptaccess="always" height="100" src="http://www.youtube.com/v/dN_6B1auRV4?version=3" style="height: 390px; width: 640px;" type="application/x-shockwave-flash" width="100"></embed></object>  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dN_6B1auRV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Оригинальный ролик:  
 <http://www.youtube.com/watch?v=mcAq9bmCeR0>  
 По этой теме Ричард Докинз написал книгу «Слепой часовщик». Она доступна и в русскоязычном варианте отсюда: <http://macroevolution.narod.ru/blind/bw.html>
