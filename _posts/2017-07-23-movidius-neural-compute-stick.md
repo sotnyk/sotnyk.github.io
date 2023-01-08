@@ -8,7 +8,9 @@ guid: 'http://sotnyk.ml/?p=1722'
 permalink: /2017/07/23/movidius-neural-compute-stick/
 ---
 
-[![](http://localhost/wp-content/uploads/2017/07/Movidius-Neural-Compute-Stick-300x213.jpg)](http://localhost/wp-content/uploads/2017/07/Movidius-Neural-Compute-Stick.jpg)Появилась новость про внешний сопроцессор для нейросетей [Movidius Neural Compute Stick](http://itc.ua/news/movidius-neural-compute-stick-v-vide-fleshki-predstavlyaet-soboy-neyronnuyu-set-s-proizvoditelnostyu-bolee-100-gigaflops/). Сама по себе идея интересная и давно назрела – переподключать видеокарту между системниками неудобно, а к ноутбуку её вообще не подключишь (только то, что установил сам производитель).
+[![](https://sotnyk.github.io/wp-content/uploads/2017/07/Movidius-Neural-Compute-Stick-300x213.jpg)](https://sotnyk.github.io/wp-content/uploads/2017/07/Movidius-Neural-Compute-Stick.jpg)
+
+Появилась новость про внешний сопроцессор для нейросетей [Movidius Neural Compute Stick](http://itc.ua/news/movidius-neural-compute-stick-v-vide-fleshki-predstavlyaet-soboy-neyronnuyu-set-s-proizvoditelnostyu-bolee-100-gigaflops/). Сама по себе идея интересная и давно назрела – переподключать видеокарту между системниками неудобно, а к ноутбуку её вообще не подключишь (только то, что установил сам производитель).
 
 Но есть подозрение, что такое устройство слишком уж слабое. Заявленная производительность – 100 Гигафлопс. В той же NVIDIA GeForce 1080, производительность 32х-битных вычислений с плавающей запятой [составляет 8228 Гигафлопс](https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%BE%D0%B2_NVIDIA#GeForce_1000_Series). Т.е., примерно в 80 раз больше. Таким образом, даже при своей текущей цене в районе $800, она оказывается на порядок дешевле аналогичного по производительности набора этих флешек по цене $79.
 

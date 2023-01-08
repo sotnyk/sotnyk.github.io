@@ -8,11 +8,13 @@ guid: 'http://sotnyk.ml/?p=1659'
 permalink: /2017/02/12/petapoco-microorm-postgresql/
 ---
 
-[![](http://localhost/wp-content/uploads/2017/02/PetaPocoLogo2_256.png)](http://localhost/wp-content/uploads/2017/02/PetaPocoLogo2_256.png)Возникла по работе необходимость использовать в проекте PostgreSQL. Решил попробовать microORM. Остановил свой выбор на PetaPoco. Еще интересен был Dapper, но немного не понравилось то, что разработчики там считают нормальным активную работу с dynamic-типом. Я же стараюсь без особой необходимости не выходить за рамки статической типизации, когда компилятор оберегает меня от банальных ошибок, которые в случае динамической типизации будут выявляться только в runtime или же нужно покрывать разные кейсы юнит-тестами. В общем, это мой выбор – вы можете писать так, как вам лучше. Может и я в следующий раз попробую Dapper.
+[![PetaPocoLogo2_256.png](https://sotnyk.github.io/wp-content/uploads/2017/02/PetaPocoLogo2_256.png)](https://sotnyk.github.io/wp-content/uploads/2017/02/PetaPocoLogo2_256.png)
+
+Возникла по работе необходимость использовать в проекте PostgreSQL. Решил попробовать microORM. Остановил свой выбор на PetaPoco. Еще интересен был Dapper, но немного не понравилось то, что разработчики там считают нормальным активную работу с dynamic-типом. Я же стараюсь без особой необходимости не выходить за рамки статической типизации, когда компилятор оберегает меня от банальных ошибок, которые в случае динамической типизации будут выявляться только в runtime или же нужно покрывать разные кейсы юнит-тестами. В общем, это мой выбор – вы можете писать так, как вам лучше. Может и я в следующий раз попробую Dapper.
 
 Итак, PetaPoco + PostgreSQL. Выяснилась следующая проблема. В этой связке не все типы, поддерживаемые движком БД, маппятся на C#. Вот пример таблицы с двумя проблемными типами, которые мне понадобились:
 
-\[sql\]  
+```sql
 CREATE TYPE “EventTypes”  
  as ENUM (‘PatientActivated’, ‘PatientDeactivated’);
 
@@ -21,11 +23,11 @@ CREATE TABLE “JsonEnumMap” (
  “Jsonb” JSONB NOT NULL,  
  “Event” “EventTypes” NOT NULL  
 );  
-\[/sql\]
+```
 
 Модель для работы с данными в C#:
 
-\[csharp\]  
+```csharp
 public enum EventTypes  
 {  
  PatientActivated,  
@@ -39,15 +41,15 @@ public class JsonEnumMap
  public EventTypes Event { get; set; }  
 }
 
-\[/csharp\]
+```
 
 Проблема первая – Jsonb. Если просто попробовать что-то записать в базу, получим такой exception: column “Jsonb” is of type jsonb but expression is of type text. Около полугода назад по [пожеланиям пользователей](https://github.com/pleb/PetaPocoBug1/issues/1), разработчики PetaPoco [добавили](https://github.com/CollaboratingPlatypus/PetaPoco/commit/dee123251f8225cdd13ea2fe7f1e2659721b3785) возможность работы с такими типами через навешивание на модель атрибута Column следующего вида:
 
-\[csharp\]  
+```csharp
  \[Column(InsertTemplate = “CAST({0}{1} AS json)”,  
  UpdateTemplate = “{0} = CAST({1}{2} AS json)”)\]  
  public string Jsonb { get; set; }  
-\[/csharp\]
+```
 
 Это решение работает, но оно мне не понравилось. Модель получается не [POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object). Если для вас это не важно, то можете остановиться на таком решении. Но к счастью, возможность внедрения шаблонов при вставке и обновлении объектов, есть и у маппера. И он дает возможность оставить чистую POCO-модель в проекте, используемом разными проектами.
 

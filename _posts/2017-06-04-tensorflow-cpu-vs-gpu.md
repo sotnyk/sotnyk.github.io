@@ -8,7 +8,7 @@ guid: 'http://sotnyk.ml/?p=1707'
 permalink: /2017/06/04/tensorflow-cpu-vs-gpu/
 ---
 
-[![](http://localhost/wp-content/uploads/2017/06/TURBO-GTX1080-8G_2D_500-300x180.png)](http://localhost/wp-content/uploads/2017/06/TURBO-GTX1080-8G_2D_500.png)
+[![TURBO-GTX1080-8G_2D_500-300x180.png](https://sotnyk.github.io/wp-content/uploads/2017/06/TURBO-GTX1080-8G_2D_500-300x180.png)](https://sotnyk.github.io/wp-content/uploads/2017/06/TURBO-GTX1080-8G_2D_500.png)
 
 Наконец взял себе видеокарту, которая позволяет аппаратно ускорять [Tensorflow](https://www.tensorflow.org/). На удивление, все установилось под Windows (как сам Tensorflow, так и поддержка Cuda, CuDNN) без особых плясок с бубном, просто по инструкциям с сайта Tensorflow и NVIDIA. Единственное, что нужно внимательно следить за тем, какую версию библиотек и питона ставить – если сказано, что нужна определенная, то не нужно устанавливать самую последнюю. Это единственное, что не позволило запуститься совсем уж быстро.
 
