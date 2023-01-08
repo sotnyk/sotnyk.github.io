@@ -8,7 +8,9 @@ guid: 'https://sotnyk.ga/?p=1784'
 permalink: /2018/07/28/allergiya-kartyi/
 ---
 
-[![](http://localhost/wp-content/uploads/2018/07/Ab_plant_2210.jpg)](http://localhost/wp-content/uploads/2018/07/Ab_plant_2210.jpg)Давно было интересно, куда можно убежать от аллергии в сезон цветения чего-то. В моем случае это амброзия. Конечно, некоторая информация имеется. Опытным путем выяснил, что в Германии земле Северный Рейн-Вестфалия все хорошо. Говорят, что неплохо в Польше в районе Вроцлава. Также относительно неплохо (но не идеально) в Закарпатье. Раньше был Крым, Южный Берег. Но в последние годы амброзия начала рости и там (хотя, конечно, гораздо меньше чем в центре Украины). Ну и сейчас Крым, до решения ситуации с аннексией, для меня умер.
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/Ab_plant_2210.jpg)](https://sotnyk.github.io/wp-content/uploads/2018/07/Ab_plant_2210.jpg)
+
+Давно было интересно, куда можно убежать от аллергии в сезон цветения чего-то. В моем случае это амброзия. Конечно, некоторая информация имеется. Опытным путем выяснил, что в Германии земле Северный Рейн-Вестфалия все хорошо. Говорят, что неплохо в Польше в районе Вроцлава. Также относительно неплохо (но не идеально) в Закарпатье. Раньше был Крым, Южный Берег. Но в последние годы амброзия начала рости и там (хотя, конечно, гораздо меньше чем в центре Украины). Ну и сейчас Крым, до решения ситуации с аннексией, для меня умер.
 
 В прошлом году провел эксперимент и на несколько дней выехал на Бердянскую косу. Регион в общем-то подвержен распространению амброзии, но, по ощущениям, когда ветер дул с моря, аллергия накрывала гораздо меньше. Речь идет о том, чтобы заехать именно на косу, на несколько километров вглубь Азовского моря, и не выезжать в город.
 
@@ -23,22 +25,22 @@ permalink: /2018/07/28/allergiya-kartyi/
 Поскольку такие ресурсы склонны исчезать со временем, а данные все-равно статистические, то просто выложу предварительно сохраненные с сайта картинки под катом. Надеюсь, что эта информация будет полезна не только мне. Если найду еще что-то интересное по теме – буду добавлять в этот пост.
 
 23-31 июля  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_07_23-31.png)](http://localhost/wp-content/uploads/2018/07/AMBR_07_23-31.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_07_23-31.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_07_23-31.png)
 
 1-11 августа  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_08_1-11.png)](http://localhost/wp-content/uploads/2018/07/AMBR_08_1-11.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_1-11.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_1-11.png)
 
 12-22 августа  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_08_12-22.png)](http://localhost/wp-content/uploads/2018/07/AMBR_08_12-22.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_12-22.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_12-22.png)
 
 23-31 августа  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_08_23-31.png)](http://localhost/wp-content/uploads/2018/07/AMBR_08_23-31.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_23-31.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_08_23-31.png)
 
 1-10 сентября  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_09_1-10.png)](http://localhost/wp-content/uploads/2018/07/AMBR_09_1-10.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_1-10.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_1-10.png)
 
 11-20 сентября  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_09_11-20.png)](http://localhost/wp-content/uploads/2018/07/AMBR_09_11-20.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_11-20.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_11-20.png)
 
 21-30 сентября  
-[![](http://localhost/wp-content/uploads/2018/07/AMBR_09_21-30.png)](http://localhost/wp-content/uploads/2018/07/AMBR_09_21-30.png)
+[![](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_21-30.png)](https://sotnyk.github.io/wp-content/uploads/2018/07/AMBR_09_21-30.png)

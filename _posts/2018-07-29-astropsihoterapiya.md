@@ -10,7 +10,7 @@ permalink: /2018/07/29/astropsihoterapiya/
 
 У вас бывает, что кто-то не так что-то сказал или, скажем, переставил любимую чашку так, что вы долго не можете её найти? И эта мелочь вас печалит и расстраивает, вырастая до размеров вселенской проблемы. Не знаю, у кого как, но мне в таких случаях очень помогает посмотреть снимки космических объектов. И на их фоне все, что происходит вокруг опять обретает свои истинные, очень мелкие размеры. Вот вам пример такой успокоительной картинки (надеюсь, что не сильно нарушил копирайты, на всякий случай – [оригинал взят здесь](https://www.rmg.co.uk/whats-on/astronomy-photographer-year/galleries/2017/overall-winner-2017)):
 
-[![The Rho Ophiuchi Clouds - Artem Mironov (Russia)  Hakos Farm, Windhoek, Namibia, 6 August 2016 ](http://localhost/wp-content/uploads/2018/07/The-Rho-Ophiuchi-Cloud-Artem-Mironov-1024x677.jpg)](http://localhost/wp-content/uploads/2018/07/The-Rho-Ophiuchi-Cloud-Artem-Mironov.jpg)
+[![The Rho Ophiuchi Clouds - Artem Mironov (Russia)  Hakos Farm, Windhoek, Namibia, 6 August 2016 ](https://sotnyk.github.io/wp-content/uploads/2018/07/The-Rho-Ophiuchi-Cloud-Artem-Mironov-1024x677.jpg)](https://sotnyk.github.io/wp-content/uploads/2018/07/The-Rho-Ophiuchi-Cloud-Artem-Mironov.jpg)
 
 Если нужно еще – вот вам галерея: [Хранители света](https://lenta.ru/photo/2018/07/29/astronomy/#0).
 
