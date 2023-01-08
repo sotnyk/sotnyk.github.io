@@ -8,7 +8,9 @@ guid: 'https://sotnyk.ga/?p=1839'
 permalink: /2019/06/02/neporochne-zachattya-komp-yuternogo-lingvista/
 ---
 
-<div class="wp-block-image"><figure class="alignleft is-resized">[![](http://localhost/wp-content/uploads/2019/06/sertificate_nlp-205x300.jpg)](http://localhost/wp-content/uploads/2019/06/sertificate_nlp.jpg)</figure></div>Для того, щоб продовжити свій рід, людині потрібно кохання до іншої людини. Але таким чином ми передаємо лише гени, а ким вони стануть, ми дізнаємося через багато-багато років. Люди, які хочуть продовжити своє діло, розмножуються тим, що навчають своїх учнів.
+[![](https://sotnyk.github.io/wp-content/uploads/2019/06/sertificate_nlp-205x300.jpg)](https://sotnyk.github.io/wp-content/uploads/2019/06/sertificate_nlp.jpg)
+
+Для того, щоб продовжити свій рід, людині потрібно кохання до іншої людини. Але таким чином ми передаємо лише гени, а ким вони стануть, ми дізнаємося через багато-багато років. Люди, які хочуть продовжити своє діло, розмножуються тим, що навчають своїх учнів.
 
 Так три місяці тому, Всеволод Дьомкін та Мар’яна Романишин, не припиняючи працювати, почали навчати п’ятнадцять нових падаванів в рамках курсу “[Data Science. Natural language processing](https://prjctr.com.ua/natural-language-processing.html)”. Одним із цих учнів став і я, переїхавши на цей час із рідного міста до Києва.
 
