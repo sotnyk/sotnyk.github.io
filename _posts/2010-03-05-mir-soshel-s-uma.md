@@ -17,3 +17,48 @@ permalink: /2010/03/05/mir-soshel-s-uma/
 Update 2011-03-05:  
 Более подробно как это сделать, можно прочитать здесь: <https://sotnyk.github.io/?p=507>  
 А сделать здесь: <https://sotnyk.github.io/crazy-world/>
+
+Update 2023-01-08:
+При переезде на Github Pages пока отключил данную страницу.
+
+Если вам интересно повторить у себя, то там был такой скрипт, из которого можете вытащить строки преобразования:
+
+```html
+ <script type="text/javascript">
+          \<!--
+        var original = "abcdefghigklmnopqrstuvwxyz"+
+        ".,;!?'"+
+        "абвгдеёжзийклмнопрстуфхцчшщьъэя";
+        var transformed = "ɐqɔpǝɟƃɥıɾʞlɯuodbɹsʇnʌʍxʎz" +
+        "˙'؛¡¿," +
+        "ɐgʚL6ǝǝжɛииʞvwноudɔшʎфхпhmmqqєʁ"
+        function MakeUpDown() {
+            var lovercased = document.getElementsByName("SourceText")[0].value.toString().toLowerCase()
+            var res = "";
+            for (i = lovercased.length - 1; i >= 0; --i) {
+                var pos = original.indexOf(lovercased.substring(i, i + 1), 0);
+                if (pos < 0)
+                    res += lovercased.substring(i, i + 1);
+                else
+                    res += transformed.substring(pos, pos + 1);
+            }
+            res = res.replace("ю", "oı").replace("ы", "ıq");
+            document.getElementsByName("ResultText")[0].value = res;
+        }
+\-->
+      </script>
+
+<form action="" name="InputForm">Вводите здесь:
+
+ <input name="SourceText" onchange="MakeUpDown()" onkeyup="MakeUpDown()" style="width: 100%" type="text" value="мир сошел с ума опять"></input>
+
+Забирайте отсюда:
+
+ <input name="ResultText" readonly="readonly" style="width: 100%; font-family: Tahoma;" type="text" value=""></input>
+
+</form> <script type="text/javascript">
+          \<!--
+          MakeUpDown();
+\-->
+      </script>
+```

@@ -12,65 +12,68 @@ permalink: /2010/02/28/test-proizvoditelnosti-poley-i-svoy/
   
 Сказано – сделано. Создадим простой класс:
 
-\[csharp\]  
+```csharp
 class ClassWithPropertyAndField  
 {  
  public int IntField = 0;
 
  public int IntProperty {get; set;}  
 }  
-\[/csharp\]  
+```
+
 А теперь попытаемся поработать с ним так, чтобы вычленить собственно операцию доступа. Это должно быть что-то очень простое. Например, суммирование.
 
 Для этого используем вот такой код:  
-\[csharp\]  
-class Program  
-{  
- delegate int TestSumProc(int repeats);
 
- static void Main(string\[\] args)  
- {  
- const int repeats = 10000000;  
- for (int i = 0; i to exit.”);  
- Console.ReadLine();  
- }
+```csharp
+class Program
+{
+delegate int TestSumProc(int repeats);
 
- static void TestSum(TestSumProc proc, int repeats, string title)  
- {  
- DateTime start = DateTime.Now;  
- int res = proc(repeats);  
- Console.WriteLine(“Test {0} for {1} repeats. Total processing time: {2} msec. Result={3}”,  
- title, repeats, (DateTime.Now – start).TotalMilliseconds, res);  
- }
+static void Main(string[] args)
+{
+const int repeats = 10000000;
+for (int i = 0; i < 5; ++i) { TestSum(SumInField, repeats, "SumInField"); TestSum(SumInProperty, repeats, "SumInProperty"); TestSum(SumByPointer, repeats, "SumByPointer"); } Console.WriteLine("Press to exit.”);
+Console.ReadLine();
+}
 
- static int SumInField(int repeats)  
- {  
- ClassWithPropertyAndField instance = new ClassWithPropertyAndField();  
- for (int i = repeats; i &gt; 0; –i)  
- instance.IntField += 2;  
- return instance.IntField;  
- }
+static void TestSum(TestSumProc proc, int repeats, string title)
+{
+DateTime start = DateTime.Now;
+int res = proc(repeats);
+Console.WriteLine(“Test {0} for {1} repeats. Total processing time: {2} msec. Result={3}”,
+title, repeats, (DateTime.Now – start).TotalMilliseconds, res);
+}
 
- static int SumInProperty(int repeats)  
- {  
- ClassWithPropertyAndField instance = new ClassWithPropertyAndField();  
- for (int i = repeats; i &gt; 0; –i)  
- instance.IntProperty += 2;  
- return instance.IntProperty;  
- }
+static int SumInField(int repeats)
+{
+ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
+for (int i = repeats; i > 0; –i)
+instance.IntField += 2;
+return instance.IntField;
+}
 
- unsafe static int SumByPointer(int repeats)  
- {  
- ClassWithPropertyAndField instance = new ClassWithPropertyAndField();  
- fixed (int\* \_field = &amp;instance.IntField)  
- {  
- while (–repeats &gt;= 0)  
- (\*\_field) += 2;  
- }  
- return instance.IntField;  
- }  
-}  
-\[/csharp\]  
+static int SumInProperty(int repeats)
+{
+ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
+for (int i = repeats; i > 0; –i)
+instance.IntProperty += 2;
+return instance.IntProperty;
+}
+
+unsafe static int SumByPointer(int repeats)
+{
+ClassWithPropertyAndField instance = new ClassWithPropertyAndField();
+fixed (int* _field = &instance.IntField)
+{
+while (–repeats >= 0)
+(*_field) += 2;
+}
+return instance.IntField;
+}
+}
+```
+
 Как мы видим, здесь используется 3 типа доступа к целочисленным полям – прямое, через свойство и через указатель. Запуск каждого теста производится по нескольку раз (в коде прописано 5), чтобы отбросить прогоны, результаты на которых резко отличаются от среднего и исключить последствия “холодного” старта.
 
 Нажимаем в Visual Studio кнопку F5 и получаем следующий результат (приведен результат только одной типичной серии):
