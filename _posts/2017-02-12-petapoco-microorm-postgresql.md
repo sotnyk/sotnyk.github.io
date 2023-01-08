@@ -1,6 +1,6 @@
 ---
 id: 1659
-title: 'PetaPoco microORM &#038; PostgreSQL'
+title: 'PetaPoco microORM & PostgreSQL'
 date: '2017-02-12T11:56:14+00:00'
 author: serge
 layout: post
@@ -15,13 +15,13 @@ permalink: /2017/02/12/petapoco-microorm-postgresql/
 Итак, PetaPoco + PostgreSQL. Выяснилась следующая проблема. В этой связке не все типы, поддерживаемые движком БД, маппятся на C#. Вот пример таблицы с двумя проблемными типами, которые мне понадобились:
 
 ```sql
-CREATE TYPE “EventTypes”  
- as ENUM (‘PatientActivated’, ‘PatientDeactivated’);
+CREATE TYPE "EventTypes"
+ as ENUM ('PatientActivated', 'PatientDeactivated');
 
-CREATE TABLE “JsonEnumMap” (  
- “Id” SERIAL PRIMARY KEY NOT NULL,  
- “Jsonb” JSONB NOT NULL,  
- “Event” “EventTypes” NOT NULL  
+CREATE TABLE "JsonEnumMap" (  
+ "Id" SERIAL PRIMARY KEY NOT NULL,  
+ "Jsonb" JSONB NOT NULL,  
+ "Event" "EventTypes" NOT NULL  
 );  
 ```
 
@@ -46,8 +46,8 @@ public class JsonEnumMap
 Проблема первая – Jsonb. Если просто попробовать что-то записать в базу, получим такой exception: column “Jsonb” is of type jsonb but expression is of type text. Около полугода назад по [пожеланиям пользователей](https://github.com/pleb/PetaPocoBug1/issues/1), разработчики PetaPoco [добавили](https://github.com/CollaboratingPlatypus/PetaPoco/commit/dee123251f8225cdd13ea2fe7f1e2659721b3785) возможность работы с такими типами через навешивание на модель атрибута Column следующего вида:
 
 ```csharp
- \[Column(InsertTemplate = “CAST({0}{1} AS json)”,  
- UpdateTemplate = “{0} = CAST({1}{2} AS json)”)\]  
+ [Column(InsertTemplate = "CAST({0}{1} AS json)",  
+ UpdateTemplate = "{0} = CAST({1}{2} AS json)")]  
  public string Jsonb { get; set; }  
 ```
 
