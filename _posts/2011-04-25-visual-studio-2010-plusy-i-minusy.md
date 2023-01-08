@@ -1,6 +1,6 @@
 ---
 id: 624
-title: 'Visual Studio 2010 &#8211; плюсы и минусы'
+title: 'Visual Studio 2010 - плюсы и минусы'
 date: '2011-04-25T15:36:25+00:00'
 author: serge
 layout: post
@@ -8,7 +8,9 @@ guid: 'http://sotnyk.com/?p=624'
 permalink: /2011/04/25/visual-studio-2010-plusy-i-minusy/
 ---
 
-![](https://sotnyk.github.io/wp-content/uploads/2011/04/vs2010.png "Visual Studio 2010") Пересел на [Visual Studio](http://ru.wikipedia.org/wiki/Microsoft_Visual_Studio) 2010. До недавнего времени работал в основном на Visual Studio 2008. Так было нужно.
+!["Visual Studio 2010"](https://sotnyk.github.io/wp-content/uploads/2011/04/vs2010.png) 
+
+Пересел на [Visual Studio](http://ru.wikipedia.org/wiki/Microsoft_Visual_Studio) 2010. До недавнего времени работал в основном на Visual Studio 2008. Так было нужно.
 
 Появился небольшой опыт её использования и хочу отметить один плюс и минус. Они не связаны с тем, что поддерживается новый .NET Framework, новая версия MVC и т.п. Это ожидаемо. Как ожидаемо и некоторое утяжеление среды. Отмечу такие моменты:  
   
