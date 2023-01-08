@@ -8,18 +8,20 @@ guid: 'http://sotnyk.com/?p=1333'
 permalink: /2013/10/26/rabota-s-rastrom-low-level-csharp/
 ---
 
-![Lenna](http://habrastorage.org/storage3/065/ee2/a4f/065ee2a4faabd325e8c2833c5b95dac3.jpg)Поводом для данной статьи стал следующий пост: [«Конвертация bmp изображения в матрицу и обратно для дальнейшей обработки»](http://habrahabr.ru/post/195344/). В свое время, мне немало пришлось написать исследовательского кода на C#, который реализовывал различные алгоритмы сжатия, обработки. То, что код исследовательский, я упомянул не случайно. У этого кода своеобразные требования. С одной стороны, оптимизация не очень важна – ведь важно проверить идею. Хотя и хочется, чтобы эта проверка не растягивалась на часы и дни (когда идет запуск с различными параметрами, либо обрабатывается большой корпус тестовых изображений). Примененный в вышеупомянутом посте способ обращения к яркостям пикселов bmp.GetPixel(x, y) – это то, с чего начинался мой первый проект. Это самый медленный, хотя и простой способ. Стоит ли тут заморачиваться? Давайте, замерим.
+![Lenna](http://habrastorage.org/storage3/065/ee2/a4f/065ee2a4faabd325e8c2833c5b95dac3.jpg)
+
+Поводом для данной статьи стал следующий пост: [«Конвертация bmp изображения в матрицу и обратно для дальнейшей обработки»](http://habrahabr.ru/post/195344/). В свое время, мне немало пришлось написать исследовательского кода на C#, который реализовывал различные алгоритмы сжатия, обработки. То, что код исследовательский, я упомянул не случайно. У этого кода своеобразные требования. С одной стороны, оптимизация не очень важна – ведь важно проверить идею. Хотя и хочется, чтобы эта проверка не растягивалась на часы и дни (когда идет запуск с различными параметрами, либо обрабатывается большой корпус тестовых изображений). Примененный в вышеупомянутом посте способ обращения к яркостям пикселов bmp.GetPixel(x, y) – это то, с чего начинался мой первый проект. Это самый медленный, хотя и простой способ. Стоит ли тут заморачиваться? Давайте, замерим.
 
 Использовать будем классический Bitmap (System.Drawing.Bitmap). Данный класс удобен тем, что скрывает от нас детали кодирования растровых форматов – как правило, они нас и не интересуют. При этом поддерживаются все распространенные форматы, типа BMP, GIF, JPEG, PNG.  
   
 Кстати, предложу для начинающих первую пользу. У класса Bitmap есть конструктор, который позволяет открыть файл с картинкой. Но у него есть неприятная особенность – он оставляет открытым доступ к этому файлу, поэтому повторные обращения к нему приводят к эксепшену. Чтобы исправить это поведение, можно использовать такой метод, заставляющий битмап сразу «отпустить» файл:  
-\[csharp\]  
+```csharp
 public static Bitmap LoadBitmap(string fileName)  
 {  
  using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))  
  return new Bitmap(fs);  
 }  
-\[/csharp\]
+```
 
 **Методика замеров**
 
@@ -34,25 +36,25 @@ public static Bitmap LoadBitmap(string fileName)
 **«Наивный» метод**
 
 Именно этот метод был применен в оригинальной статье. Он состоит в том, что используется метод Bitmap.GetPixel(x, y). Приведем полностью код подобного метода, который конвертирует содержимое битмапа в трехмерный байтовый массив. При этом первая размерность – это цветовая компонента (от 0 до 2), вторая – позиция y, третья – позиция x. Так сложилось в моих проектах, если вам захочется расположить данные иначе – думаю, проблем не возникнет.  
-\[csharp\]  
-public static byte\[, ,\] BitmapToByteRgbNaive(Bitmap bmp)  
+```csharp
+public static byte[, ,] BitmapToByteRgbNaive(Bitmap bmp)  
 {  
  int width = bmp.Width,  
  height = bmp.Height;  
- byte\[, ,\] res = new byte\[3, height, width\];  
- for (int y = 0; y &lt; height; ++y)  
+ byte[, ,] res = new byte[3, height, width];
+ for (int y = 0; y < height; ++y)  
  {  
- for (int x = 0; x &lt; width; ++x)  
- {  
- Color color = bmp.GetPixel(x, y);  
- res\[0, y, x\] = color.R;  
- res\[1, y, x\] = color.G;  
- res\[2, y, x\] = color.B;  
- }  
+  for (int x = 0; x < width; ++x)  
+  {  
+   Color color = bmp.GetPixel(x, y);  
+   res[0, y, x] = color.R;  
+   res[1, y, x] = color.G;  
+   res[2, y, x] = color.B;  
+  }  
  }  
  return res;  
 }  
-\[/csharp\]
+```
 
 Обратное преобразование аналогично, только перенос данных идет в другом направлении. Я не буду приводить его код здесь – желающие могут посмотреть в исходных кодах проекта по ссылке в конце статьи.
 
@@ -61,90 +63,92 @@ public static byte\[, ,\] BitmapToByteRgbNaive(Bitmap bmp)
 **Прямая работа с данными Bitmap**
 
 К счастью, класс Bitmap предоставляет более быстрый способ обратиться к своим данным. Для этого нам необходимо воспользоваться ссылками, предоставляемыми классом BitmapData и адресной арифметикой:  
-\[csharp\]  
-public unsafe static byte\[, ,\] BitmapToByteRgb(Bitmap bmp)  
+```csharp
+public unsafe static byte[,,] BitmapToByteRgb(Bitmap bmp)  
 {  
  int width = bmp.Width,  
  height = bmp.Height;  
- byte\[, ,\] res = new byte\[3, height, width\];  
+ byte[, ,] res = new byte[3, height, width];  
  BitmapData bd = bmp.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly,  
- PixelFormat.Format24bppRgb);  
+   PixelFormat.Format24bppRgb);  
  try  
  {  
- byte\* curpos;  
- for (int h = 0; h &lt; height; h++)  
- {  
- curpos = ((byte\*)bd.Scan0) + h \* bd.Stride;  
- for (int w = 0; w &lt; width; w++)  
- {  
- res\[2, h, w\] = \*(curpos++);  
- res\[1, h, w\] = \*(curpos++);  
- res\[0, h, w\] = \*(curpos++);  
- }  
- }  
+  byte* curpos;  
+  for (int h = 0; h < height; h++)  
+  {  
+   curpos = ((byte*)bd.Scan0) + h * bd.Stride;  
+   for (int w = 0; w < width; w++)  
+   {  
+    res[2, h, w] = *(curpos++);  
+    res[1, h, w] = *(curpos++);  
+    res[0, h, w] = *(curpos++);  
+   }  
+  }  
  }  
  finally  
  {  
- bmp.UnlockBits(bd);  
+  bmp.UnlockBits(bd);  
  }  
  return res;  
 }  
-\[/csharp\]
+```
 
 Такой подход дает нам получить 0.533 секунды на 100 преобразований (ускорились в 82 раза)! Думаю, это уже отвечает на вопрос – а стоит ли писать более сложный код преобразования? Но можем ли мы еще ускорить процесс, оставаясь в рамках managed-кода?
 
 **Массивы vs указатели**
 
 Многомерные массивы являются не самыми быстрыми структурами данных. Здесь производятся проверки на выход за пределы индекса, сам элемент вычисляется, используя операции умножения и сложения. Поскольку адресная арифметика уже дала нам один раз существенное ускорение при работе с данными Bitmap, то может быть, попробуем её применить и для многомерных массивов? Вот код прямого преобразования:  
-\[csharp\]  
-public unsafe static byte\[, ,\] BitmapToByteRgbQ(Bitmap bmp)  
+
+```csharp
+public unsafe static byte[, ,] BitmapToByteRgbQ(Bitmap bmp)  
 {  
  int width = bmp.Width,  
  height = bmp.Height;  
- byte\[, ,\] res = new byte\[3, height, width\];  
+ byte[, ,] res = new byte[3, height, width\];  
  BitmapData bd = bmp.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly,  
- PixelFormat.Format24bppRgb);  
+   PixelFormat.Format24bppRgb);  
  try  
  {  
- byte\* curpos;  
- fixed (byte\* \_res = res)  
- {  
- byte\* \_r = \_res, \_g = \_res + 1, \_b = \_res + 2;  
- for (int h = 0; h &lt; height; h++)  
- {  
- curpos = ((byte\*)bd.Scan0) + h \* bd.Stride;  
- for (int w = 0; w &lt; width; w++)  
- {  
- \*\_b = \*(curpos++); \_b += 3;  
- \*\_g = \*(curpos++); \_g += 3;  
- \*\_r = \*(curpos++); \_r += 3;  
- }  
- }  
- }  
+  byte* curpos;  
+  fixed (byte* _res = res)  
+  {  
+   byte* _r = _res, _g = _res + 1, _b = _res + 2;  
+   for (int h = 0; h < height; h++)  
+   {  
+    curpos = ((byte*)bd.Scan0) + h * bd.Stride;  
+    for (int w = 0; w < width; w++)  
+    {  
+     *_b = *(curpos++); _b += 3;  
+     *_g = *(curpos++); _g += 3;  
+     *_r = *(curpos++); _r += 3;  
+    }  
+   }  
+  }  
  }  
  finally  
  {  
- bmp.UnlockBits(bd);  
+  bmp.UnlockBits(bd);  
  }  
  return res;  
 }  
-\[/csharp\]
+```
 
 Результат? 0.162 сек на 100 преобразований. Так что ускорились еще в 3.3 раза (270 раз по сравнению с «наивной» версией). Именно подобный код и использовался мною при исследованиях алгоритмов.
 
 **Зачем вообще переносить?**
 
 Не совсем очевидно, а зачем вообще переносить данные из Bitmap. Может вообще, все преобразования осуществлять именно там? Соглашусь, что это один из возможных вариантов. Но, дело в том, что многие алгоритмы удобнее проверять на данных с плавающей запятой. Тогда нет проблем с переполнениями, потерей точности на промежуточных этапах. Преобразовать в double/float-массив можно аналогичным способом. Обратное преобразование требует проверки при конвертации в byte. Вот простой код такой проверки:  
-\[csharp\]  
+
+```csharp
 private static byte Limit(double x)  
 {  
- if (x &lt; 0)  
- return 0;  
- if (x &gt; 255)  
- return 255;  
+ if (x < 0)  
+  return 0;  
+ if (x > 255)  
+  return 255;  
  return (byte)x;  
 }  
-\[/csharp\]
+```
 
 Добавление таких проверок и преобразование типов замедляет наш код. Версия с адресной арифметикой на double-массивах исполняется уже 0.713 сек (на 100 преобразований). Но на фоне «наивного» варианта – она просто молния.
 
