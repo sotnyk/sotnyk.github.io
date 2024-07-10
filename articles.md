@@ -33,6 +33,7 @@ guid: 'http://sotnyk.com/?page_id=4'
 - [А.А. Шумейко, С.Л. Сотник. Итерационный метод построения векторного классификатора](Articles/A.A.Shumeyko,S.L.Sotnik.Iteratsionnyj_metod_postroeniya_vektornogo_klassifikatora.pdf). Опубликовано в журнале 1(20) 2009 “Методи математичного моделювання”. Стр. 7-11
 - [А.А. Шумейко, С.Л. Сотник, М.В. Лысак. Использование генетических алгоритмов в задачах классификации текстов](Articles/A.A.Shumeyko,S.L.Sotnik,M.V.Lysak.Ispolzovanie_GA_v_zadachah_klassifikatsii_tekstov.pdf). Опубликовано [в журнале 1(60) 2009 “Системные технологии”](http://www.nbuv.gov.ua/portal/natural/syte/2009_1/index.html). Стр. 125-138
 - [А.А. Шумейко, С.Л. Сотник. Использование агломеративной кластеризации для автоматической рубрикации данных.](Articles/A.A.Shumeyko,S.L.Sotnik.Ispolzovanie_aglomerativnoj_klasterizatsii_dlya_avtorubrikatsii_tekstov.pdf) Опубликовано [в журнале 3 (74) 2011 “Системные технологии”](http://www.nbuv.gov.ua/portal/natural/syte/2011_3/index.html). Стр. 131-137
+- [Eugene Vyborov, Oleksiy Osypenko, Serge Sotnyk. Exploring Fact Memorization and Style Imitation in LLMs Using QLoRA: An Experimental Study and Quality Assessment Methods](https://arxiv.org/abs/2406.08582). Preprint
 
 **Неопубликованное, оформленное в виде статей**
 
